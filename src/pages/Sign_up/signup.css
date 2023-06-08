@@ -14,6 +14,7 @@
     --background--input:#f5f1fa;
     --background--btn:#b2fdf3;
     --font-btn:#009681;
+    --input--clr:#BE9BF3;
 }
 
 .signUp
@@ -45,6 +46,9 @@
     height: 20px;
     width: 280px;
     padding: 10px 10px;
+    color: var(--input--clr);
+    font-size: 15px;
+    font-weight: 400;
 }
 .signup__form h1,h2
 {
