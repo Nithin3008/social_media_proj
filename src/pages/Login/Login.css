@@ -29,12 +29,12 @@
 .login__enterDetails
 {
     color: #00c7ff;
-    font-size: 30px;
+    font-size: 20px;
     display:flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;  
 }
 .login__enterDetails h1
 {
@@ -51,10 +51,10 @@
     border-radius: 10px;
     height: 30px;
     padding: 5px ;
-    margin-left: 40px;
     color: #fff;
+    width: 300px;
 }
-.login__enterDetails label
+.login__enterDetails p
 {
     padding: 10px 10px;
 }
