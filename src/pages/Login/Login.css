@@ -77,3 +77,7 @@
     cursor: pointer;
     background-color: white;
 }
+.login__enterDetails--signup
+{
+    margin-top: 10px;
+}

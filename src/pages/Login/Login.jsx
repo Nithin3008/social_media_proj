@@ -1,5 +1,5 @@
 import { useState } from "react"
-import pic1 from "../../pages/Login/itachi.jpg"
+import pic1 from "../../pages/Login/kakashi.jpg"
 
 import "./Login.css"
 import { Link } from "react-router-dom"
@@ -19,7 +19,7 @@ export function Login1()
             <button>Login</button>
             <button>Guest Login</button>
             </div>
-            <p>New User? Create Account <Link>Signup!</Link> </p>
+            <p className="login__enterDetails--signup">New User? Create Account <Link>Signup!</Link> </p>
         </div>
         </section>
 
