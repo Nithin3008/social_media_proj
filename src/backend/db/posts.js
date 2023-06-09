@@ -12,14 +12,17 @@ export const posts = [
     content:
       "Demon slayer episode Kyojuro Rengoku vs Akaza was stunning and emotional fight",
     likes: {
-      likeCount: 0,
+      likeCount: 1,
       likedBy: [],
       dislikedBy: [],
     },
     username: "tony@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    comment:[]
+    comment:[],
+    following:[],
+    followers:[],
+
   },
   {
     _id: uuid(),
@@ -33,7 +36,9 @@ export const posts = [
     username: "shubhamsoni",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    comment:[]
+    comment:[],
+    following:[],
+    followers:[],
   },
   {
     _id: uuid(),
@@ -48,7 +53,9 @@ export const posts = [
     username: "shubhamsoni",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    comment:[]
+    comment:[],
+    following:[],
+    followers:[],
   },
   {
     _id: uuid(),
@@ -62,7 +69,9 @@ export const posts = [
     username: "shubhamsoni",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    comment:[]
+    comment:[],
+    following:[],
+    followers:[],
   },
   {
     _id: uuid(),
@@ -76,6 +85,8 @@ export const posts = [
     username: "shubhamsoni",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    comment:[]
+    comment:[],
+    following:[],
+    followers:[],
   },
 ];
