@@ -21,8 +21,8 @@ export function Login1()
         <div className="login__enterDetails">
             <h1>AnimeVerse</h1>
             <div>
-            <p>Email</p>
-            <input type="text" placeholder="Email" onChange={(event)=>userDetails.userName=event.target.value} />
+            <p>Username</p>
+            <input type="text" placeholder="Username" onChange={(event)=>userDetails.userName=event.target.value} />
             <p>Password</p>
             <div>
             
