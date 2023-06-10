@@ -49,7 +49,7 @@ export function ReducerProv({children})
             }
             return{...state,bookmarks:action.payload.bookmarks,followers:action.payload.followers,following:action.payload.following, loggedInUser:user}
         }
-        else if(action.type==="Added followers")
+        else if(action.type==="AddFollowing")
         {
             return{...state,following:action.payload}
         }
@@ -82,6 +82,6 @@ export function ReducerProv({children})
 
     // console.log(state.following)
     return(<>
-        <MainContext.Provider value={{dispatcherMain,Posts:state.posts,Users:state.ExistedUsers,loggedInUser:state.loggedInUser,loggedInUserFollwers:state.followers}}>{children}</MainContext.Provider>
+        <MainContext.Provider value={{dispatcherMain,Posts:state.posts,Users:state.ExistedUsers,loggedInUser:state.loggedInUser,loggedInUserFollwers:state.following}}>{children}</MainContext.Provider>
     </>)
 }
