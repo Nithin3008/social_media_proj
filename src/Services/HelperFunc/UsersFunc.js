@@ -1,28 +1,30 @@
-import { createContext } from "react"
+import { createContext, useContext } from "react"
 import axios from "axios";
-
+import { MainContext } from "../Context/MainReducer";
 
 export const UsersContext=createContext()
 export function UserProvider({children})
 {
-    function getUsers()
+    const {dispatcherMain,loggedInUserFollwers}=useContext(MainContext)
+    // function getUsers()
+    // {
+    //     const users=async()=>
+    //     {
+    //         try {
+    //             const response = await axios.get("/api/users")
+    //             console.log(response.data.users)        
+    //         } catch (error) {
+    //             console.log(error)
+    //         }
+    //     }
+    //     users()
+    // }
+    function followersExist(userName)
     {
-        const users=async()=>
-        {
-            try {
-                const response = await axios.get("/api/users")
-                console.log(response.data.users)
-                //   if(response.status===200)
-                //   {
-                   
-                //   }
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        users()
+        const check=loggedInUserFollwers.find((user)=>user===userName)
+        return check===undefined?false:true
     }
     return(<>
-    <UsersContext.Provider value={{getUsers}} >{children}</UsersContext.Provider>
+    <UsersContext.Provider value={{followersExist}} >{children}</UsersContext.Provider>
     </>)
 }
