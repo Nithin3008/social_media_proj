@@ -11,6 +11,7 @@
     --font-clr:#fa005a;
     --font-spanClr:#fb327a;
     --yellow-clr:#ffc500;
+    --font-secondary:#00c7ff;
 }
 
 .home{
@@ -30,6 +31,7 @@
     flex-direction: column;
     background-color: #1e1f23;
     align-items: center;
+    border-right: 1px solid white;
 }
 .home_pages h1
 {
@@ -53,6 +55,20 @@
     text-align: center;
 
 
+}
+.home_postsSection-filters button
+{
+    border: 1px solid white;
+    background-color: #1e1f23;
+    font-size: 22px;
+    color: white;
+    margin: 10px 25px;
+    font-weight: 600;
+    font-family:Noto Sans, sans-serif;
+    padding: 10px 10px;
+    border-radius: 8px;
+
+    
 }
 .home__postsSection__posts
 {
@@ -118,6 +134,12 @@
     margin-top: 50px;
     margin-right: 25px;
     border-radius: 8px;
+}
+.home_followers h1
+{
+    padding: 15px 15px;
+    text-align: center;
+    color: var(--font-secondary);
 }
 .home_followers ul
 {
