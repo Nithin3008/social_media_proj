@@ -17,7 +17,7 @@
 .home{
     display: flex;
     background-color: #17181c;
-    
+    min-height: 100vh;
 }
 .home li
 {
