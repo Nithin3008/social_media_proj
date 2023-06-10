@@ -10,8 +10,6 @@ export function  FollowProvider({children})
     const {dispatcherMain}=useContext(MainContext)
     function setFollowers(followUserId)
     {
-        console.log(followUserId)
-        console.log(encodedToken)
         const setFollow=async()=>
         {
             try {
@@ -20,7 +18,6 @@ export function  FollowProvider({children})
                       authorization: encodedToken, 
                     },
                   });
-                  console.log(response)
                   if(response.status===200)
                   {
                     toast.success(`You following a new user`,{
@@ -39,23 +36,21 @@ export function  FollowProvider({children})
     function setUnFollowers(followUserId)
     {
         console.log(followUserId)
-        console.log(encodedToken)
         const setUnFollow=async()=>
         {
             try {
-                const response = await axios.post(`/api/users/unfollow//${followUserId}`,{},{
+                const response = await axios.post(`/api/users/unfollow/${followUserId}`,{},{
                     headers: {
                       authorization: encodedToken, 
                     },
                   });
-                  console.log(response)
                   if(response.status===200)
                   {
                     toast.warning(`You unfollowing user`,{
                         position:"top-center"})
                   }
                   let followers=response.data.user.following.map((val)=>val.username)
-                  console.log(followers)
+                  dispatcherMain({type:"AddFollowing",payload:followers})
             } catch (error) {
                 console.log(error)
             }
