@@ -33,8 +33,35 @@ export function  FollowProvider({children})
         }
         setFollow()
     }
+
+    function setUnFollowers(followUserId)
+    {
+        console.log(followUserId)
+        console.log(encodedToken)
+        const setUnFollow=async()=>
+        {
+            try {
+                const response = await axios.post(`/api/users/unfollow//${followUserId}`,{},{
+                    headers: {
+                      authorization: encodedToken, 
+                    },
+                  });
+                  console.log(response)
+                  if(response.status===200)
+                  {
+                    toast.warning(`You unfollowing user`,{
+                        position:"top-center"})
+                  }
+                  let followers=response.data.user.following.map((val)=>val.username)
+                  console.log(followers)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        setUnFollow()
+    }
     return(<>
-    <FollowContext.Provider value={{setFollowers}}>{children}</FollowContext.Provider>
+    <FollowContext.Provider value={{setFollowers,setUnFollowers}}>{children}</FollowContext.Provider>
     <ToastContainer></ToastContainer>
     </>)
 }
