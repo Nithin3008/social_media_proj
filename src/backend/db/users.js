@@ -32,8 +32,6 @@ export const users = [
     password: "boruto",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    followers:[],
-    following:["tony@gmail.com","kakshi@gmail.com"],
   },
   {
     _id: uuid(),
@@ -47,7 +45,7 @@ export const users = [
   {
     _id: uuid(),
     firstName: "Tanjiro",
-    lastName: "BLade",
+    lastName: "Blade",
     username: "TanjiroTheSunBreather",
     password: "demonSlayer",
     createdAt: formatDate(),
