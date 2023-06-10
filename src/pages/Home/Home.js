@@ -2,19 +2,21 @@
 import { useContext } from "react"
 import { MainContext } from "../../Services/Context/MainReducer"
 import { FollowContext } from "../../Services/HelperFunc/FollowFunc"
+import { UsersContext } from "../../Services/HelperFunc/UsersFunc"
 import {NavLink} from "react-router-dom"
 import "./home.css"
 
 export function Home1()
 {
     const {Posts,Users,loggedInUser,loggedInUserFollwers}=useContext(MainContext)
-    const {setFollowers}=useContext(FollowContext)
+    const {setFollowers,setUnFollowers}=useContext(FollowContext)
+    const{followersExist}=useContext(UsersContext)
     console.log(Users)
     const postsD=[...Posts].filter((val)=>val.username==loggedInUser.username)
     const postFollow=[...Posts].filter((posts)=>loggedInUserFollwers.find((user)=>user===posts.username))
     const finalPosts=[...postsD,...postFollow]
     const PostsData=[...finalPosts]
-    
+
     return(<div>
         <section className="home">
             <div className="home_pages">
@@ -46,7 +48,7 @@ export function Home1()
                     <p><li>{val.firstName}</li>
                     <span   >{val.username}</span></p>
                     
-                    <button onClick={()=>setFollowers(val._id)}>Follow</button>
+                    <button onClick={()=>followersExist(val.username)?setUnFollowers(val._id):setFollowers(val._id)}>{followersExist(val.username)?"unfollow":"Follow"}</button>
                 </ul>)}
             </div>
         </section>
