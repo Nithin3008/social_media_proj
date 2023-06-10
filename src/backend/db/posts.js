@@ -16,46 +16,52 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
+    firstName:"Tony",
     username: "tony@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comment:[],
     following:[],
     followers:[],
+    img:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/reng_vs_akaza.webp"
 
   },
   {
     _id: uuid(),
     content:
-      "Rewatching battle between naruto vs pain",
+      "Rewatching battle between naruto vs pain, Naruto makes an entrance into the Hidden Leaf Village, but doesn’t recognize his surroundings. Naruto is unable to sense the Chakra of many beloved to him, including his teacher Kakashi Hatake.",
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
-    username: "shubhamsoni",
+    firstName:"Naruto",
+    username: "naruto@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comment:[],
     following:[],
     followers:[],
+    img:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/naruto_vs_pain.webp"
   },
   {
     _id: uuid(),
     content:
-      "waiting for Attack on Titan Final episode",
+      "Waiting for Attack on Titan Final episode",
     likes: {
       likeCount: 0,
       likedBy: [],
       dislikedBy: [],
       
     },
-    username: "shubhamsoni",
+    firstName:"Kakshi",
+    username: "kakshi@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comment:[],
     following:[],
     followers:[],
+    img:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/eren.webp"
   },
   {
     _id: uuid(),
@@ -66,12 +72,14 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
-    username: "shubhamsoni",
+    firstName:"Tanjiro",
+    username: "Tanjiro@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comment:[],
     following:[],
     followers:[],
+    img:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/vegeta.webp"
   },
   {
     _id: uuid(),
@@ -82,11 +90,13 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
-    username: "shubhamsoni",
+    firstName:"Adarsh",
+    username: "adarshbalika",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comment:[],
     following:[],
     followers:[],
+    img:"https://github.com/Nithin3008/social_media_proj/blob/master/public/images/Gojo.jpg?raw=true"
   },
 ];
