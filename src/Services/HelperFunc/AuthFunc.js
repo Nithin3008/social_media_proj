@@ -20,12 +20,14 @@ export function AuthProvider({ children }) {
                 password: pwd
               });
               const userInfo=response.data.foundUser
+              console.log(response.data.encodedToken)
+              localStorage.setItem("token", response.data.encodedToken);
               dispatcherMain({type:"userDetails",payload:userInfo})
-              if(response.status===201)
+              if(response.status===200)
               {
                   toast.success(`Welcome Back`,{
                   position:"top-center"})
-                        // nav("/Login1")
+                   nav("/Home1")
               }
         } catch (error) {
             console.log(error)
