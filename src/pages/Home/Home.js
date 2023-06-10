@@ -7,11 +7,14 @@ import "./home.css"
 
 export function Home1()
 {
-    const {Posts,Users,loggedInUser}=useContext(MainContext)
+    const {Posts,Users,loggedInUser,loggedInUserFollwers}=useContext(MainContext)
     const {setFollowers}=useContext(FollowContext)
     console.log(Users)
-    const PostsData=[...Posts]
-    console.log(PostsData)
+    const postsD=[...Posts].filter((val)=>val.username==loggedInUser.username)
+    const postFollow=[...Posts].filter((posts)=>loggedInUserFollwers.find((user)=>user===posts.username))
+    const finalPosts=[...postsD,...postFollow]
+    const PostsData=[...finalPosts]
+    
     return(<div>
         <section className="home">
             <div className="home_pages">
@@ -27,7 +30,7 @@ export function Home1()
             </div>
             <div className="home_postsSection">
                 <div className="home_postsSection-filters">
-                    <button>Trending</button>
+                    <button>Trending🔥🔥</button>
                     <button>Sort By Date</button>
                 </div>
                 {PostsData.map((val)=><ul key={val._id} className="home__postsSection__posts">
@@ -38,6 +41,7 @@ export function Home1()
                 </ul>)}
              </div>
             <div className="home_followers">
+                <h1>Suggested Users</h1>
             {Users.map((val)=><ul key={val._id}>
                     <p><li>{val.firstName}</li>
                     <span   >{val.username}</span></p>
