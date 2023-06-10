@@ -1,12 +1,13 @@
-import { createContext } from "react";
+import { createContext,useContext } from "react";
 import axios from "axios";
 import {  ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { MainContext } from "../Context/MainReducer";
 export const FollowContext=createContext()
 export function  FollowProvider({children})
 {
     const encodedToken=localStorage.getItem("token")
-    
+    const {dispatcherMain}=useContext(MainContext)
     function setFollowers(followUserId)
     {
         console.log(followUserId)
@@ -26,6 +27,7 @@ export function  FollowProvider({children})
                         position:"top-center"})
                   }
                   let followers=response.data.user.following.map((val)=>val.username)
+                  dispatcherMain({type:"AddFollowing",payload:followers})
                   console.log(followers)
             } catch (error) {
                 console.log(error)
