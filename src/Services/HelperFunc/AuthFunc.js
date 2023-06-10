@@ -1,13 +1,14 @@
-import { createContext } from "react";
+import { createContext,useContext } from "react";
 
 import axios from "axios";
 import {  ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { MainContext } from "../Context/MainReducer";
 export const AuthContext = createContext();
 
 
 export function AuthProvider({ children }) {
-
+  const {dispatcherMain}=useContext(MainContext)
   function LoginHandler({userName,pwd}) {
     console.log(userName,pwd)
     const loginHandle1 = async () => {
@@ -17,7 +18,8 @@ export function AuthProvider({ children }) {
                 username:userName,
                 password: pwd
               });
-              console.log(response.data)
+              const userInfo=response.data.foundUser
+              dispatcherMain({type:"userDetails",payload:userInfo})
               if(response.status===201)
               {
                   toast.success(`Welcome Back`,{
