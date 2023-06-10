@@ -11,6 +11,7 @@ export function ReducerProv({children})
             const response = await axios.get(`/api/posts`)
             dispatcherMain({type:"getPosts",payload:response.data.posts})
             const resUsers = await axios.get("/api/users")
+            console.log(resUsers.data.users)
             dispatcherMain({type:"getUsers",payload:resUsers.data.users})
         }
         intialData()
@@ -48,6 +49,10 @@ export function ReducerProv({children})
             }
             return{...state,bookmarks:action.payload.bookmarks,followers:action.payload.followers,following:action.payload.following, loggedInUser:user}
         }
+        else if(action.type==="Added followers")
+        {
+            return{...state,following:action.payload}
+        }
     }
 
 
@@ -75,8 +80,8 @@ export function ReducerProv({children})
 
 
 
-    // console.log(state.loggedInUser)
+    // console.log(state.following)
     return(<>
-        <MainContext.Provider value={{dispatcherMain,Posts:state.posts,Users:state.ExistedUsers}}>{children}</MainContext.Provider>
+        <MainContext.Provider value={{dispatcherMain,Posts:state.posts,Users:state.ExistedUsers,loggedInUser:state.loggedInUser,loggedInUserFollwers:state.followers}}>{children}</MainContext.Provider>
     </>)
 }
