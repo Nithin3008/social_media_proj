@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import axios from "axios";
-
+import {  ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const FollowContext=createContext()
 export function  FollowProvider({children})
 {
@@ -18,7 +19,14 @@ export function  FollowProvider({children})
                       authorization: encodedToken, 
                     },
                   });
-                  console.log(response.data)
+                  console.log(response)
+                  if(response.status===200)
+                  {
+                    toast.success(`You following a new user`,{
+                        position:"top-center"})
+                  }
+                  let followers=response.data.user.following.map((val)=>val.username)
+                  console.log(followers)
             } catch (error) {
                 console.log(error)
             }
@@ -27,5 +35,6 @@ export function  FollowProvider({children})
     }
     return(<>
     <FollowContext.Provider value={{setFollowers}}>{children}</FollowContext.Provider>
+    <ToastContainer></ToastContainer>
     </>)
 }
