@@ -5,7 +5,7 @@
     margin: 0;
     /* padding: 0; */
     /* box-sizing: border-box; */
-    
+    font-family:'Noto Sans', sans-serif;
 }
 :root
 {
@@ -14,6 +14,7 @@
     --background--clr:#000103;
     --baclground-btn:#008bb3;
     --font--btn:#00c7ff
+
 
 }
  .login
@@ -49,10 +50,13 @@
     border: 0;
     background-color: #013741;
     border-radius: 10px;
-    height: 30px;
+    height: 40px;
     padding: 5px ;
     color: #fff;
     width: 300px;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-size: 500;
 }
 .login__enterDetails p
 {
