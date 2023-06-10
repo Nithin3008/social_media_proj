@@ -1,5 +1,5 @@
 import { createContext,useContext } from "react";
-
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {  ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,6 +9,7 @@ export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const {dispatcherMain}=useContext(MainContext)
+  const nav=useNavigate()
   function LoginHandler({userName,pwd}) {
     console.log(userName,pwd)
     const loginHandle1 = async () => {
@@ -45,13 +46,12 @@ function Signup(userDetails)
                         username: userDetails?.userName,
                         password: userDetails?.pwd,
                       });
-                      console.log(response)
                       localStorage.setItem("token", response.data.encodedToken);
                       if(response.status===201)
                       {
                         toast.success(`Welcome ${userDetails.fName}`,{
                           position:"top-center"})
-                        // nav("/Login1")
+                        nav("/Login1")
                       }
                       
                     } catch (error) {
