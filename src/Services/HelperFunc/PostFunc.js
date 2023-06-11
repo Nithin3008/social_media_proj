@@ -6,7 +6,7 @@ export const PostsContext=createContext()
 export function PostsProvider({children})
 {
     const encodedToken=localStorage.getItem("token")
-    const {dispatcherMain}=useContext(MainContext)
+    const {dispatcherMain,Posts,loggedInUser}=useContext(MainContext)
     const getPosts=()=>
     {
         const posts=async()=>
@@ -44,7 +44,37 @@ export function PostsProvider({children})
         like()
     }
 
+    function unLikePosts(postId)
+    {
+        const unLike=async()=>
+        {
+            try {
+                const response=await axios.post(`/api/posts/dislike/${postId}`,{},{
+                    headers: {
+                        authorization: encodedToken, 
+                      },
+                })
+                console.log(response.data.posts)
+                dispatcherMain({type:"getPosts",payload:response.data.posts})
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        unLike()
+    }
+
+
+
+    function checkLikes()
+    {
+        const x=Posts.map((val)=>val.likes.likedBy.find((user)=>user.username===loggedInUser.username)===undefined?false:val._id)
+        return x
+        // console.log(Posts.map((val)=>val.likes.likedBy.filter((val)=>val.username===loggedInUser.username?val._id:"")))
+        
+    }
+    checkLikes()
+
     return(<>
-    <PostsContext.Provider value={{getPosts,likePosts}}>{children}</PostsContext.Provider>
+    <PostsContext.Provider value={{getPosts,likePosts,checkLikes,unLikePosts}}>{children}</PostsContext.Provider>
     </>)
 }
