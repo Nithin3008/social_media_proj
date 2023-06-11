@@ -5,17 +5,18 @@ import { FollowContext } from "../../Services/HelperFunc/FollowFunc"
 import { UsersContext } from "../../Services/HelperFunc/UsersFunc"
 import {NavLink} from "react-router-dom"
 import "./home.css"
+import { PostsContext } from "../../Services/HelperFunc/PostFunc"
 
 export function Home1()
 {
     const {Posts,Users,loggedInUser,loggedInUserFollwers}=useContext(MainContext)
     const {setFollowers,setUnFollowers}=useContext(FollowContext)
-    const{followersExist}=useContext(UsersContext)
-    console.log(Users)
+    const {followersExist}=useContext(UsersContext)
+    const {likePosts,checkLikes,unLikePosts}=useContext(PostsContext)
     const postsD=[...Posts].filter((val)=>val.username==loggedInUser.username)
     const postFollow=[...Posts].filter((posts)=>loggedInUserFollwers.find((user)=>user===posts.username))
-    const finalPosts=[...postsD,...postFollow]
-    const PostsData=[...finalPosts]
+    const PostsData=[...postsD,...postFollow]
+    console.log(checkLikes())
 
     return(<div>
         <section className="home">
@@ -39,7 +40,7 @@ export function Home1()
                     <li className="home__postsSection__posts-fName">{val.firstName} <span>{val.username}</span></li>
                     <li><img src={val.img}></img></li>
                     <li className="home__postsSection__posts-Content">{val.content}</li>
-                    <li className="home__postsSection__posts-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> {val.likes.likeCount} <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></li>
+                    <li className="home__postsSection__posts-button"><svg xmlns="http://www.w3.org/2000/svg" onClick={()=>checkLikes().includes(val._id)===true?unLikePosts(val._id):likePosts(val._id)} width="24" height="24" viewBox="0 0 24 24" fill={checkLikes().includes(val._id)===true?"red":""} stroke="red" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> {val.likes.likeCount} <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg></li>
                 </ul>)}
              </div>
             <div className="home_followers">
