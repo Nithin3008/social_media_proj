@@ -11,7 +11,6 @@ export function ReducerProv({children})
             const response = await axios.get(`/api/posts`)
             dispatcherMain({type:"getPosts",payload:response.data.posts})
             const resUsers = await axios.get("/api/users")
-            console.log(resUsers.data.users)
             dispatcherMain({type:"getUsers",payload:resUsers.data.users})
         }
         intialData()
@@ -53,6 +52,10 @@ export function ReducerProv({children})
         {
             return{...state,following:action.payload}
         }
+        else if(action.type==="AddBookmarks")
+        {
+            return{...state,bookmarks:action.payload}
+        }
     }
 
 
@@ -80,8 +83,8 @@ export function ReducerProv({children})
 
 
 
-    // console.log(state.following)
+    console.log(state.posts)
     return(<>
-        <MainContext.Provider value={{dispatcherMain,Posts:state.posts,Users:state.ExistedUsers,loggedInUser:state.loggedInUser,loggedInUserFollwers:state.following}}>{children}</MainContext.Provider>
+        <MainContext.Provider value={{dispatcherMain,Posts:state.posts,Users:state.ExistedUsers,loggedInUser:state.loggedInUser,loggedInUserFollwers:state.following,BookMarks:state.bookmarks}}>{children}</MainContext.Provider>
     </>)
 }
