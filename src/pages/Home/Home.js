@@ -1,10 +1,6 @@
 
 import { useContext } from "react"
 import { MainContext } from "../../Services/Context/MainReducer"
-import { FollowContext } from "../../Services/HelperFunc/FollowFunc"
-import { UsersContext } from "../../Services/HelperFunc/UsersFunc"
-import { Explore1 } from "../Explore/Explore"
-import {NavLink} from "react-router-dom"
 import "./home.css"
 import { PostsContext } from "../../Services/HelperFunc/PostFunc"
 import { Suggested } from "../../components/suggestion/SuggestionSec"
