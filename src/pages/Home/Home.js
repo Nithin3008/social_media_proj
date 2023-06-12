@@ -12,9 +12,7 @@ import { RouteSec } from "../../components/RouteSection/RouteSec"
 
 export function Home1()
 {
-    const {Posts,Users,loggedInUser,loggedInUserFollwers}=useContext(MainContext)
-    const {setFollowers,setUnFollowers}=useContext(FollowContext)
-    const {followersExist}=useContext(UsersContext)
+    const {Posts,loggedInUser,loggedInUserFollwers}=useContext(MainContext)
     const {likePosts,checkLikes,unLikePosts}=useContext(PostsContext)
 
 
