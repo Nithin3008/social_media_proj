@@ -93,9 +93,25 @@ export function PostsProvider({children})
         }
         getBooks()
     }
-    
+    function addBookmark(postId)
+    {
+        const addBook=async()=>
+        {
+            try {
+                const response=await axios.post(`/api/users/bookmark/${postId}`,{},{
+                    headers: {
+                        authorization: encodedToken, 
+                      },
+                })
+                console.log(response.data.bookmarks)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        addBook()
+    }
 
     return(<>
-    <PostsContext.Provider value={{getPosts,likePosts,checkLikes,unLikePosts,intialBookMarks}}>{children}</PostsContext.Provider>
+    <PostsContext.Provider value={{getPosts,likePosts,checkLikes,unLikePosts,intialBookMarks,addBookmark}}>{children}</PostsContext.Provider>
     </>)
 }
