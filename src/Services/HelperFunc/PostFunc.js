@@ -109,12 +109,34 @@ export function PostsProvider({children})
         }
         addBook()
     }
+
+    function removeBookmark(postId)
+    {
+        const removeBook=async()=>
+        {
+            try {
+                const response=await axios.post(`/api/users/remove-bookmark/${postId}`,{},{
+                    headers: {
+                        authorization: encodedToken, 
+                      },
+                })
+                console.log(response.data.bookmarks)
+                dispatcherMain({type:"AddBookmarks",payload:response.data.bookmarks})
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        removeBook()
+    }
+
+
+
     function checkBookMarks()
     {
         return BookMarks.map((val)=>val._id)
     }
     
     return(<>
-    <PostsContext.Provider value={{getPosts,likePosts,checkLikes,unLikePosts,intialBookMarks,addBookmark,checkBookMarks}}>{children}</PostsContext.Provider>
+    <PostsContext.Provider value={{getPosts,likePosts,checkLikes,unLikePosts,intialBookMarks,addBookmark,checkBookMarks,removeBookmark}}>{children}</PostsContext.Provider>
     </>)
 }
