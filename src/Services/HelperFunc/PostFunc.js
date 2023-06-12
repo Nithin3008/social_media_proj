@@ -6,7 +6,7 @@ export const PostsContext=createContext()
 export function PostsProvider({children})
 {
     const encodedToken=localStorage.getItem("token")
-    const {dispatcherMain,Posts,loggedInUser}=useContext(MainContext)
+    const {dispatcherMain,Posts,loggedInUser,BookMarks}=useContext(MainContext)
     const getPosts=()=>
     {
         const posts=async()=>
@@ -68,9 +68,7 @@ export function PostsProvider({children})
     function checkLikes()
     {
         const x=Posts.map((val)=>val.likes.likedBy.find((user)=>user.username===loggedInUser.username)===undefined?false:val._id)
-        return x
-        // console.log(Posts.map((val)=>val.likes.likedBy.filter((val)=>val.username===loggedInUser.username?val._id:"")))
-        
+        return x        
     }
 
 
@@ -104,14 +102,19 @@ export function PostsProvider({children})
                       },
                 })
                 console.log(response.data.bookmarks)
+                dispatcherMain({type:"AddBookmarks",payload:response.data.bookmarks})
             } catch (error) {
                 console.log(error)
             }
         }
         addBook()
     }
-
+    function checkBookMarks()
+    {
+        return BookMarks.map((val)=>val._id)
+    }
+    
     return(<>
-    <PostsContext.Provider value={{getPosts,likePosts,checkLikes,unLikePosts,intialBookMarks,addBookmark}}>{children}</PostsContext.Provider>
+    <PostsContext.Provider value={{getPosts,likePosts,checkLikes,unLikePosts,intialBookMarks,addBookmark,checkBookMarks}}>{children}</PostsContext.Provider>
     </>)
 }
