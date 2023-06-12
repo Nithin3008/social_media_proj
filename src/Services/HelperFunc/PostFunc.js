@@ -72,9 +72,30 @@ export function PostsProvider({children})
         // console.log(Posts.map((val)=>val.likes.likedBy.filter((val)=>val.username===loggedInUser.username?val._id:"")))
         
     }
-    checkLikes()
+
+
+
+    //////////////BookMark-Section////////////////////////////////
+    function intialBookMarks()
+    {
+        const getBooks=async()=>
+        {
+            try {
+                const response=await axios.get("/api/users/bookmark",{
+                    headers: {
+                        authorization: encodedToken, 
+                      },
+                })
+                console.log(response.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getBooks()
+    }
+    
 
     return(<>
-    <PostsContext.Provider value={{getPosts,likePosts,checkLikes,unLikePosts}}>{children}</PostsContext.Provider>
+    <PostsContext.Provider value={{getPosts,likePosts,checkLikes,unLikePosts,intialBookMarks}}>{children}</PostsContext.Provider>
     </>)
 }
