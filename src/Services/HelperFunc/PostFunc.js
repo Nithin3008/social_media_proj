@@ -5,6 +5,8 @@ import { MainContext } from "../Context/MainReducer";
 export const PostsContext=createContext()
 export function PostsProvider({children})
 {
+    const empt=JSON.stringify({})
+    console.log(empt)
     const encodedToken=localStorage.getItem("token")
     const {dispatcherMain,Posts,loggedInUser,BookMarks}=useContext(MainContext)
     const getPosts=()=>
@@ -30,7 +32,7 @@ export function PostsProvider({children})
         const like=async()=>
         {
             try {
-                const response=await axios.post(`/api/posts/like/${postId}`,{},{
+                const response=await axios.post(`/api/posts/like/${postId}`,empt,{
                     headers: {
                         authorization: encodedToken, 
                       },
@@ -49,7 +51,7 @@ export function PostsProvider({children})
         const unLike=async()=>
         {
             try {
-                const response=await axios.post(`/api/posts/dislike/${postId}`,{},{
+                const response=await axios.post(`/api/posts/dislike/${postId}`,empt,{
                     headers: {
                         authorization: encodedToken, 
                       },
@@ -96,7 +98,7 @@ export function PostsProvider({children})
         const addBook=async()=>
         {
             try {
-                const response=await axios.post(`/api/users/bookmark/${postId}`,{},{
+                const response=await axios.post(`/api/users/bookmark/${postId}`,empt,{
                     headers: {
                         authorization: encodedToken, 
                       },
@@ -115,7 +117,7 @@ export function PostsProvider({children})
         const removeBook=async()=>
         {
             try {
-                const response=await axios.post(`/api/users/remove-bookmark/${postId}`,{},{
+                const response=await axios.post(`/api/users/remove-bookmark/${postId}`,empt,{
                     headers: {
                         authorization: encodedToken, 
                       },
