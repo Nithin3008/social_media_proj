@@ -14,6 +14,7 @@ export const users = [
     password: "adarshBalika123",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    bookmarks: [],
   },
   {
     _id: uuid(),
@@ -23,6 +24,7 @@ export const users = [
     password: "ironman",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    bookmarks: [],
   },
   {
     _id: uuid(),
@@ -32,6 +34,7 @@ export const users = [
     password: "boruto",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    bookmarks: [],
   },
   {
     _id: uuid(),
@@ -41,6 +44,7 @@ export const users = [
     password: "sensei",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    bookmarks: [],
   },
   {
     _id: uuid(),
@@ -50,5 +54,6 @@ export const users = [
     password: "demonSlayer",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    bookmarks: [],
   },
 ];
