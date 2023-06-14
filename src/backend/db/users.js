@@ -17,7 +17,7 @@ export const users = [
     bookmarks: [],
     bio:"Master Ultra instict",
     portfolio:"https://dragonball.fandom.com/wiki/Vegeta",
-    avatar:"",
+    avatar:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/vegeta.webp",
   },
   {
     _id: uuid(),
@@ -30,7 +30,7 @@ export const users = [
     bookmarks: [],
     bio:"Scientist,Philanthropist,Avengers",
     portfolio:"https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man",
-    avatar:"",
+    avatar:"https://github.com/Nithin3008/social_media_proj/blob/master/public/images/tony.jpg?raw=true",
   },
   {
     _id: uuid(),
@@ -43,7 +43,7 @@ export const users = [
     bookmarks: [],
     bio:"Hokage of leaf village",
     portfolio:"https://naruto.fandom.com/wiki/Naruto_Uzumaki",
-    avatar:"",
+    avatar:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/naruto.webp",
   },
   {
     _id: uuid(),
@@ -56,7 +56,7 @@ export const users = [
     bookmarks: [],
     bio:"Sensei of team-7",
     portfolio:"https://naruto.fandom.com/wiki/Kakashi_Hatake",
-    avatar:"",
+    avatar:"https://github.com/Nithin3008/social_media_proj/blob/master/public/images/kakashi.jpg?raw=true",
   },
   {
     _id: uuid(),
@@ -69,6 +69,6 @@ export const users = [
     bookmarks: [],
     bio:"DemonSlayer",
     portfolio:"https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado",
-    avatar:"",
+    avatar:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/tanjiro.webp",
   },
 ];
