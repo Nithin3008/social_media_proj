@@ -38,12 +38,8 @@ export function ReducerProv({children})
         }
         else if(action.type==="userDetails")
         {
-            const user={
-                fname:action.payload.firstName,
-                lname:action.payload.lastName,
-                username:action.payload.username,
-            }
-            return{...state,bookmarks:action.payload.bookmarks,followers:action.payload.followers,following:action.payload.following, loggedInUser:user}
+            
+            return{...state,bookmarks:action.payload.bookmarks,followers:action.payload.followers,following:action.payload.following, loggedInUser:action.payload}
         }
         else if(action.type==="AddFollowing")
         {
@@ -81,7 +77,7 @@ export function ReducerProv({children})
 
 
 
-    // console.log(state.posts)
+    console.log(state.loggedInUser)
     return(<>
         <MainContext.Provider value={{dispatcherMain,Posts:state.posts,Users:state.ExistedUsers,loggedInUser:state.loggedInUser,loggedInUserFollwers:state.following,BookMarks:state.bookmarks}}>{children}</MainContext.Provider>
     </>)
