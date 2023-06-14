@@ -12,7 +12,7 @@ export const posts = [
     content:
       "Demon slayer episode Kyojuro Rengoku vs Akaza was stunning and emotional fight",
     likes: {
-      likeCount: 1,
+      likeCount: 0,
       likedBy: [],
       dislikedBy: [],
     },
