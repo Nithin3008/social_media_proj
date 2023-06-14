@@ -18,11 +18,16 @@ export function Profile1()
     <section className="ProfileSec">
         <RouteSec></RouteSec>
         <div className="ProfileSec_about">
-                <div>
+                <div className="ProfileSec_about_details">
+                    <div>
+                    <img src={profileData.avatar}></img>
+                    </div>
+                    <div>
                     <h2>{profileData.firstName} {profileData.lastName}</h2>
                     <h4>{profileData.bio}</h4>
                   <p><a href={profileData.portfolio}>More about me...</a> <span>{profileData.createdAt}</span></p>  
                     <p>Followers: {profileData.followers.length} Following: {profileData.following.length} Posts: {postsData.length}</p>
+                    </div>
                 </div>
                 <hr></hr>{
                 postsData.map((val)=><ul key={val._id} className="ProfileSec__postsSection__posts">

@@ -31,13 +31,18 @@
     text-align: center;
     color: var(--font-secondary);
 }
-.ProfileSec_about div
-{
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-start; */
-}
 
+.ProfileSec_about img
+{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+}
+.ProfileSec_about_details{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
 .ProfileSec__postsSection__posts
 {
     display: flex;
