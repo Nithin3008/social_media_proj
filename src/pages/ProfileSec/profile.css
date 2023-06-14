@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap');
+*
+{
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+    
+}
+:root {
+    --font-clr:#fa005a;
+    --font-spanClr:#fb327a;
+    --yellow-clr:#ffc500;
+    --font-secondary:#00c7ff;
+}
+
+.ProfileSec{
+    display: flex;
+    background-color: #17181c;
+    min-height: 100vh;
+}
+.ProfileSec_about
+{
+    flex: 1;
+    text-align: center;
+    color: var(--font-secondary);
+}
+.ProfileSec_about div
+{
+    margin-top: 55px;
+}
