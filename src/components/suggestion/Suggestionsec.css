@@ -1,3 +1,9 @@
+:root
+{
+  --background-btn:#edf1ff;
+  --clr-btn:#151619;
+  --sec-clr:#fffbed
+}
 .Suggest_followers {
   width: fit-content;
   /* background-color: #1e1f23; */
@@ -9,12 +15,14 @@
   border-radius: 8px;
 }
 .Suggest_followers h1 {
+  font-size: 25px;
+  font-weight: 400;
   padding: 15px 15px;
   text-align: center;
-  color: var(--font-secondary);
+  color: var(--sec-clr);
 }
 .Suggest_followers ul {
-  color: var(--font-clr);
+  color: var(--background-btn);
   padding: 15px 15px;
   display: flex;
   justify-content: space-between;
@@ -22,7 +30,7 @@
 }
 .Suggest_followers ul span {
   font-size: 12px;
-  color: var(--font-spanClr);
+  color: #ffffff;
 }
 .Suggest_followers ul button {
   border: 0;
@@ -30,8 +38,8 @@
   border-radius: 10px;
   height: fit-content;
   padding: 5px 15px;
-  background-color: var(--yellow-clr);
-  color: var(--font-clr);
+  background-color: var(--background-btn);
+  color: var(--clr-btn);
   font-size: 15px;
   font-size: 500;
 }
