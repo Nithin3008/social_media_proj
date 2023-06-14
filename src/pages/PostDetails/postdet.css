@@ -42,20 +42,6 @@
     align-items: center;
     /* justify-content: space-around; */
 }
-.PostDetails_postsSection-filters button
-{
-    border: 1px solid white;
-    background-color: #1e1f23;
-    font-size: 22px;
-    color: white;
-    margin: 10px 25px;
-    font-weight: 600;
-    font-family:Noto Sans, sans-serif;
-    padding: 10px 10px;
-    border-radius: 8px;
-
-    
-}
 .PostDetails__postsSection__posts
 {
     display: flex;
