@@ -19,6 +19,12 @@
     background-color: #17181c;
     min-height: 100vh;
 }
+
+.ProfileSec li
+{
+    list-style: none;
+   
+}
 .ProfileSec_about
 {
     flex: 1;
@@ -27,5 +33,65 @@
 }
 .ProfileSec_about div
 {
-    margin-top: 55px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+}
+
+.ProfileSec__postsSection__posts
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    /* margin-top: 50px; */
+    background-color: #1e1f23;
+    width: 700px;
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+    padding: 20px 0px;
+    padding-left: 50px;
+    border: 0.1px solid white;
+}
+.ProfileSec__postsSection__posts img
+{
+    height: 300px;
+    width: 550px;
+    border-radius: 10px;
+    padding: 10px 10px;
+
+}
+
+.ProfileSec
+{
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--font-clr);
+    font-family: 'Noto Sans', sans-serif;
+    /* padding: 10px 10px; */
+}
+.ProfileSec span
+{
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--font-spanClr);
+}
+.ProfileSec__postsSection__posts-Content
+{
+    color: var(--yellow-clr);
+    padding: 10px 10px;
+    font-weight: 600;
+}
+.ProfileSec__postsSection__posts-button
+{
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    color: white;
+}
+.ProfileSec__postsSection__posts-button svg
+{
+    
+    margin:0px 13px;
 }
