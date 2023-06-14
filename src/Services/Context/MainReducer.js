@@ -21,9 +21,6 @@ export function ReducerProv({children})
         loggedInUser:{fname:"",lname:"",username:""},
         bookmarks:[],
         posts:[],
-        bio:"",
-        portfolio:"",
-        Avatar:"",
         followers:[],
         following:[],
     }
@@ -56,6 +53,7 @@ export function ReducerProv({children})
         {
             return{...state,bookmarks:action.payload}
         }
+        return state
     }
 
 
@@ -83,7 +81,7 @@ export function ReducerProv({children})
 
 
 
-    console.log(state.posts)
+    // console.log(state.posts)
     return(<>
         <MainContext.Provider value={{dispatcherMain,Posts:state.posts,Users:state.ExistedUsers,loggedInUser:state.loggedInUser,loggedInUserFollwers:state.following,BookMarks:state.bookmarks}}>{children}</MainContext.Provider>
     </>)
