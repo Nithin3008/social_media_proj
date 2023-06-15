@@ -24,6 +24,7 @@ export function  FollowProvider({children})
                         position:"top-center"})
                   }
                   let followers=response.data.user.following.map((val)=>val.username)
+                  dispatcherMain({type:"userDetails",payload:response.data.user})
                   dispatcherMain({type:"AddFollowing",payload:followers})
                   console.log(followers)
             } catch (error) {
@@ -50,6 +51,7 @@ export function  FollowProvider({children})
                         position:"top-center"})
                   }
                   let followers=response.data.user.following.map((val)=>val.username)
+                  dispatcherMain({type:"userDetails",payload:response.data.user})
                   dispatcherMain({type:"AddFollowing",payload:followers})
             } catch (error) {
                 console.log(error)
