@@ -73,7 +73,23 @@
     color: var(--font-primary);
     padding: 5px 5px;
 }
+.ProfileSec_about_details--buttons
+{
+    border: 0;
+    flex: 0.5;
+    align-self: center;
 
+}
+.ProfileSec_about_details--buttons button
+{
+    font-size: 18px;
+    color:#1e1f23 ;
+    background-color: var(--font-primary);
+    padding: 5px 5px;
+    border: 0;
+    margin-left: 2px;
+    border-radius: 5px;
+}
 
 .ProfileSec_about img
 {
