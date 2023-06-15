@@ -130,3 +130,54 @@
 .ProfileSec__postsSection__posts-button svg {
   margin: 0px 13px;
 }
+.editSection
+{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(239, 234, 234, 0.4);
+}
+.editSection__details
+{
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  margin-top: 10%;
+  background-color: #1e1f23;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: var(--font-primary);
+  padding: 10px 10px;
+}
+
+.editSection__details-input{
+  width: 0.1px;
+  height: 0px;
+}
+.editSection__details-info p
+{
+  font-size: 19px;
+  margin-top: 5px;
+}
+.editSection__details-info input
+{
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid var(--font-primary);
+  background-color: #1e1f23;
+  color:var(--font-primary);
+  font-size: 16px;
+}
+button
+{
+  background-color: var(--font-primary);
+  font-size: 16px;
+  margin: 10px 10px;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
