@@ -8,6 +8,7 @@
     
 }
 :root {
+    --font-primary:#edf1ff;
     --font-clr:#fa005a;
     --font-spanClr:#fb327a;
     --yellow-clr:#ffc500;
@@ -16,7 +17,7 @@
 
 .ProfileSec{
     display: flex;
-    background-color: #17181c;
+    background-color: #1e1f23;
     min-height: 100vh;
 }
 
@@ -31,16 +32,58 @@
     text-align: center;
     color: var(--font-secondary);
 }
+.about_details
+{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+
+}
+.details_name
+{
+    font-size: 25px;
+    font-weight: 400;
+    color:var(--font-primary) ;
+    padding: 5px 5px;
+}
+.details_bio
+{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--font-primary);
+    padding: 5px 5px;
+}
+.details_portfolio span
+{
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--font-primary);
+    padding: 0px 5px;
+}
+.details_portfolio a
+{
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--font-clr);
+    font-weight: 300;
+    padding: 0px 5px;
+}
+.details_otherData{
+    font-size: 16px;
+    color: var(--font-primary);
+    padding: 5px 5px;
+}
+
 
 .ProfileSec_about img
 {
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     border-radius: 100%;
 }
 .ProfileSec_about_details{
     display: flex;
-    align-items: start;
+    align-items:flex-start;
     justify-content: center;
 }
 .ProfileSec__postsSection__posts
@@ -75,12 +118,6 @@
     color: var(--font-clr);
     font-family: 'Noto Sans', sans-serif;
     /* padding: 10px 10px; */
-}
-.ProfileSec span
-{
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--font-spanClr);
 }
 .ProfileSec__postsSection__posts-Content
 {
