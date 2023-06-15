@@ -8,6 +8,7 @@ import { PostsContext } from "../../Services/HelperFunc/PostFunc";
 import { FollowContext } from "../../Services/HelperFunc/FollowFunc";
 import { UsersContext } from "../../Services/HelperFunc/UsersFunc";
 import { useNavigate } from "react-router";
+import { useState } from "react";
 export function Profile1() {
   const { ProfileId } = useParams();
   const { Users, Posts, loggedInUser } = useContext(MainContext);
@@ -23,6 +24,7 @@ export function Profile1() {
     checkBookMarks,
     removeBookmark,
   } = useContext(PostsContext);
+  const [edit,showEdit]=useState(true)
   const nav = useNavigate();
   console.log(profileData.username === loggedInUser.username);
   console.log(new Date(profileData.createdAt).toDateString().slice(4, 15));
@@ -30,6 +32,23 @@ export function Profile1() {
     <>
       <section className="ProfileSec">
         <RouteSec></RouteSec>
+        <div  className="editSection" style={{display:edit?"none":"block"}}>
+
+            <div className="editSection__details">
+           <label>Choose Avatar<input type="file" className="editSection__details-input"></input></label> 
+           <div  className="editSection__details-info">
+           <p>Bio</p>
+            <input type="text"></input>
+            <p>Portfolio</p>
+            <input type="text"></input> 
+           </div>
+           <div>
+           <button>Save</button>
+           <button onClick={()=>showEdit(!edit)}>Cancel</button>
+           </div>
+            </div>
+          
+        </div>
         <div className="ProfileSec_about">
           <div className="ProfileSec_about_details">
             <div>
@@ -59,6 +78,7 @@ export function Profile1() {
                       ? "inline"
                       : "none",
                 }}
+                onClick={()=>showEdit(!edit)}
               >
                 Edit Profile
               </button>
