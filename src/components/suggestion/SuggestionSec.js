@@ -2,7 +2,6 @@ import "./Suggestionsec.css"
 import { MainContext } from "../../Services/Context/MainReducer"
 import { FollowContext } from "../../Services/HelperFunc/FollowFunc"
 import { UsersContext } from "../../Services/HelperFunc/UsersFunc"
-import { PostsContext } from "../../Services/HelperFunc/PostFunc"
 import { useContext } from "react"
 export function Suggested()
 {
