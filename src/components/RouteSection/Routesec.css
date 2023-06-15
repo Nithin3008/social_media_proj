@@ -1,37 +1,33 @@
-
-.RouteSec{
-    width: 300px;
-    height: 100%;
-    background-color: #1e1f23;
-    border-right: 1px solid white;
+:root {
+  --primary-clr: #f2edff;
+  --background-clr:#1e1f23
 }
-.RouteSec li
-{
-    list-style: none;
-   
+.RouteSec {
+  width: 300px;
+  height: 100%;
+  background-color: var(--background-clr);
+  border-right: 1px solid white;
 }
-.RouteSec_pages
-{
-    display: flex;
-    flex-direction: column;
-    background-color: #1e1f23;
-    align-items: center;
-    position: fixed;
-    margin-left: 50px;
+.RouteSec li {
+  list-style: none;
 }
-.RouteSec_pages h1
-{
-    font-size: 25px;
-    color: var(--yellow-clr);
-    font-weight: 700;
-    font-family:Noto Sans, sans-serif;
-    margin-top: 30px;
-    padding: 15px 15px;
+.RouteSec_pages {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-clr);
+  align-items: center;
 }
-.RouteSec_pages-navLinks 
-{
-        text-decoration: none;
-        color:var(--font-clr);
-        font-size: 20px;
-        padding: 10px 10px ;
+.RouteSec_pages h1 {
+  font-size: 25px;
+  font-weight: 400;
+  color: var(--primary-clr);
+  font-family: Noto Sans, sans-serif;
+  margin-top: 30px;
+  padding: 15px 15px;
+}
+.RouteSec_pages-navLinks {
+  text-decoration: none;
+  color: var(--primary-clr);
+  font-size: 20px;
+  padding: 10px 10px;
 }
