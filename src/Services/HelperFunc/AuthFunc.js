@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
                 password: pwd
               });
               const userInfo=response.data.foundUser
-              console.log(response.data.encodedToken)
+              console.log(response.data.foundUser)
               localStorage.setItem("token", response.data.encodedToken);
               dispatcherMain({type:"userDetails",payload:userInfo})
               if(response.status===200)
