@@ -70,6 +70,7 @@ async function uploadImage(post)
 {
   try {
     const file=post.img
+    console.log(file)
   console.log(file,"image path")
   const present_key="social_media_proj"
   const formData=new FormData()
@@ -131,28 +132,35 @@ async function uploadNewPost(post)
 
 
 
-function editPost(editPost)
-{
-  console.log(editPost)
-  const edit=async()=>
+  const edit=async(Post)=>
   {
     try {
-      const response=await axios.post(`/api/posts/edit/${editPost._id}`,{postData:editPost},
+      const response=await axios.post(`/api/posts/edit/${Post._id}`,{postData:Post},
         {
           headers: {
             authorization: encodedToken,
           },
         })
+        if(response.status===201)
+        {
+          return response.data.posts
+        }
         console.log(response)
     } catch (error) {
       console.log(error)
     }
   }
-  edit()
-}
 
 
 
+  async function editPost(editPost)
+  {
+    const result1=await uploadImage(editPost)
+    console.log(result1)
+    const result2=await edit(result1)
+    console.log(result2)
+    dispatcherMain({type:"getPosts",payload:result2})
+  }
 
 
 
