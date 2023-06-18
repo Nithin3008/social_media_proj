@@ -162,7 +162,24 @@ async function uploadNewPost(post)
     dispatcherMain({type:"getPosts",payload:result2})
   }
 
+const deletePost=async(postId)=>
+{
+  try {
+    const response=await axios.delete (`/api/posts/${postId}`,{
+      headers: {
+      authorization: encodedToken,
+    },
 
+    })
+    console.log(response.data.posts)
+    if(response.status===201)
+    {
+      dispatcherMain({type:"getPosts",payload:response.data.posts})
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
 
@@ -268,7 +285,8 @@ async function uploadNewPost(post)
           checkBookMarks,
           removeBookmark,
           editPost,
-          uploadNewPost
+          uploadNewPost,
+          deletePost
         }}
       >
         {children}
