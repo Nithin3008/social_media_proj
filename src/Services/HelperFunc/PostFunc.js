@@ -70,39 +70,62 @@ function newPost(post)
 {
   const newpost=async()=>
   {
-    console.log(post.path)
-    const file=post.path
+    
+    // console.log(formData)
+    try {
+      const file=post.path
+    console.log(file,"image path")
     const present_key="social_media_proj"
     const formData=new FormData()
     formData.append('file',file)
-    formData.append('upload_present',present_key)
-    fetch("https://api.cloudinary.com/v1_1/king-cloud/image/upload",{
-      method: "POST",
-      body: formData,
-    })   .then(res=>console.log(res))
-    .catch(err=>console.log(err))
-    //axios.post(`https://api.cloudinary.com/v1_1/king-cloud/image/upload`,formData)
-    // .then(res=>console.log(res))
-    // .catch(err=>console.log(err))
-    // console.log(x)
-    // try {
-    //   const response=await axios.post("/api/posts",{
-    //     postData: post,
-    //   },{
-    //     headers: {
-    //       authorization: encodedToken,
-    //     },
-    //   })
-    //   console.log(response)
-    // } catch (error) {
-    //   console.log(error)
-    // }
+    formData.append('upload_preset',present_key)
+      const res=await fetch(`https://api.cloudinary.com/v1_1/king-cloud/image/upload`,{
+        method:"POST",
+        body:formData
+      })
+      const x=await res.json()
+      console.log(x.url)
+      post.path=x.url
+    } catch (error) {
+      console.log(error)
+      
+   
   }
+  try {
+    const response=await axios.post("/api/posts",{
+      postData: post,
+    },{
+      headers: {
+        authorization: encodedToken,
+      },
+    })
+    console.log(response)
+  } catch (error) {
+    console.log(error)
+  }
+}
   newpost()
 }
 
-
-
+function editPost(editPost)
+{
+  console.log(editPost)
+  const edit=async()=>
+  {
+    try {
+      const response=await axios.post(`/api/posts/edit/${editPost._id}`,{postData:editPost},
+        {
+          headers: {
+            authorization: encodedToken,
+          },
+        })
+        console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  edit()
+}
 
 
 
@@ -213,6 +236,7 @@ function newPost(post)
           checkBookMarks,
           removeBookmark,
           newPost,
+          editPost
         }}
       >
         {children}
