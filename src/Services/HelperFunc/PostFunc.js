@@ -75,13 +75,20 @@ async function uploadImage(post)
   const formData=new FormData()
   formData.append('file',file)
   formData.append('upload_preset',present_key)
-    const res=await fetch(`https://api.cloudinary.com/v1_1/king-cloud/image/upload`,{
+    if(post.img)
+    {
+      const res=await fetch(`https://api.cloudinary.com/v1_1/king-cloud/image/upload`,{
       method:"POST",
       body:formData
     })
     const x=await res.json()
     console.log(x.url)
     post.img=x.url
+    }
+    else
+    {
+      return {...post,img:null}
+    }
   } catch (error) {
     console.log(error)
     }
