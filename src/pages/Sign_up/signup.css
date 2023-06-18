@@ -9,7 +9,7 @@
 }
 :root
 {
-    --background-clr:#8b3f52;
+    --background-clr-sign:#8b3f52;
     --font-clr-sign:#00AE95;
     --background--input:#f5f1fa;
     --background--btn:#b2fdf3;
@@ -23,7 +23,7 @@
     height: 100vh;
     flex-direction: row;
     overflow: hidden;
-    background-color:var(--background-clr)
+    background-color:var(--background-clr-sign)
 }
 .signup__form
 {
