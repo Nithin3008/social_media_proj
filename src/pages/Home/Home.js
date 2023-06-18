@@ -11,7 +11,7 @@ import { useNavigate } from "react-router"
 export function Home1()
 {
     const {Posts,loggedInUser,loggedInUserFollwers}=useContext(MainContext)
-    const {likePosts,checkLikes,unLikePosts,addBookmark,checkBookMarks,removeBookmark,newPost,editPost}=useContext(PostsContext)
+    const {likePosts,checkLikes,unLikePosts,addBookmark,checkBookMarks,removeBookmark,uploadNewPost,editPost}=useContext(PostsContext)
     const [show,setShow]=useState(false)
     const [editObject,setObject]=useState({})
     const [editDetails,setDetails]=useState()
@@ -26,9 +26,14 @@ export function Home1()
         }
 function checkValue()
 {
-    newPost(postDetails)
+    uploadNewPost(postDetails)
     console.log(postDetails)
 }
+// function handleSetImage(e)
+// {
+//     postDetails.img=e.target.files[0]
+    
+// }
 function sendEditPost()
 {
     const x={...editObject,img:editImage,content:editDetails}

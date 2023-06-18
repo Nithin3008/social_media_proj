@@ -66,31 +66,30 @@ export function PostsProvider({ children }) {
   }
 
 //creating new posts
-function newPost(post)
+async function uploadImage(post)
 {
-  const newpost=async()=>
+  try {
+    const file=post.img
+  console.log(file,"image path")
+  const present_key="social_media_proj"
+  const formData=new FormData()
+  formData.append('file',file)
+  formData.append('upload_preset',present_key)
+    const res=await fetch(`https://api.cloudinary.com/v1_1/king-cloud/image/upload`,{
+      method:"POST",
+      body:formData
+    })
+    const x=await res.json()
+    console.log(x.url)
+    post.img=x.url
+  } catch (error) {
+    console.log(error)
+    }
+
+    return post
+}
+  const newpost=async(post)=>
   {
-    
-    // console.log(formData)
-    try {
-      const file=post.path
-    console.log(file,"image path")
-    const present_key="social_media_proj"
-    const formData=new FormData()
-    formData.append('file',file)
-    formData.append('upload_preset',present_key)
-      const res=await fetch(`https://api.cloudinary.com/v1_1/king-cloud/image/upload`,{
-        method:"POST",
-        body:formData
-      })
-      const x=await res.json()
-      console.log(x.url)
-      post.path=x.url
-    } catch (error) {
-      console.log(error)
-      
-   
-  }
   try {
     const response=await axios.post("/api/posts",{
       postData: post,
@@ -99,13 +98,31 @@ function newPost(post)
         authorization: encodedToken,
       },
     })
+    if(response.status===201)
+    {
+      return response.data.posts
+    }
     console.log(response)
   } catch (error) {
     console.log(error)
   }
+  
 }
-  newpost()
+
+async function uploadNewPost(post)
+{
+  const result1=await uploadImage(post)
+  console.log(result1)
+  const result2=await newpost(result1)
+  dispatcherMain({type:"getPosts",payload:result2})
 }
+
+
+
+
+
+
+
 
 function editPost(editPost)
 {
@@ -235,8 +252,8 @@ function editPost(editPost)
           addBookmark,
           checkBookMarks,
           removeBookmark,
-          newPost,
-          editPost
+          editPost,
+          uploadNewPost
         }}
       >
         {children}
