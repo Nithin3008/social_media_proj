@@ -13,8 +13,9 @@ export function Profile1() {
   const { ProfileId } = useParams();
   const { Users, Posts, loggedInUser } = useContext(MainContext);
   const { setFollowers, setUnFollowers } = useContext(FollowContext);
+  const {editUsers}=useContext(UsersContext)
   const { followersExist } = useContext(UsersContext);
-  const profileData = Users.find((val) => val.username === ProfileId);
+  const profileData = ProfileId===loggedInUser.username?loggedInUser:Users?.find((val) => val.username === ProfileId);
   const postsData = Posts.filter((val) => val.username === ProfileId);
   const {
     likePosts,
@@ -26,8 +27,16 @@ export function Profile1() {
   } = useContext(PostsContext);
   const [edit,showEdit]=useState(true)
   const nav = useNavigate();
-  console.log(profileData.username === loggedInUser.username);
-  console.log(new Date(profileData.createdAt).toDateString().slice(4, 15));
+  const [inputValue,setInput]=useState(profileData.bio)
+  const [portfolioValue,setPortfolio]=useState(profileData.portfolio)
+  const [img1,setImg]=useState({})
+function sendData()
+{
+ const x={...profileData,bio:inputValue,portfolio:portfolioValue,img:img1 }
+ console.log(x)
+ editUsers(x)
+  showEdit(!edit)
+}
   return (
     <>
       <section className="ProfileSec">
@@ -35,15 +44,15 @@ export function Profile1() {
         <div  className="editSection" style={{display:edit?"none":"block"}}>
 
             <div className="editSection__details">
-           <label>Choose Avatar<input type="file" className="editSection__details-input"></input></label> 
+           <label>Choose Avatar<input type="file" className="editSection__details-input" onChange={(e)=>setImg(e.target.files[0])}></input></label> 
            <div  className="editSection__details-info">
            <p>Bio</p>
-            <input type="text"></input>
+            <input onChange={(e)=>setInput(e.target.value)} value={inputValue} type="text"></input>
             <p>Portfolio</p>
-            <input type="text"></input> 
+            <input onChange={(e)=>setPortfolio(e.target.value)} type="text" value={portfolioValue}></input> 
            </div>
            <div>
-           <button>Save</button>
+           <button onClick={()=>sendData()}>Save</button>
            <button onClick={()=>showEdit(!edit)}>Cancel</button>
            </div>
             </div>
@@ -60,7 +69,7 @@ export function Profile1() {
               </p>
               <p className="details_bio">{profileData.bio}</p>
               <p className="details_portfolio">
-                <a href={profileData.portfolio}>More about me...</a>{" "}
+                <a href={profileData.portfolio} target="_blank">More about me...</a>{" "}
                 <span>
                   {new Date(profileData.createdAt).toDateString().slice(4, 15)}
                 </span>
