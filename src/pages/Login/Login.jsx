@@ -12,6 +12,12 @@ export function Login1()
     {
         LoginHandler(userDetails)
     }
+    function guestLogin()
+    {
+        userDetails.userName="kakshiOfTheSharigan"
+        userDetails.pwd="sensei"
+        LoginHandler(userDetails)
+    }
 
         return(<div>
         <section className="login">
@@ -32,9 +38,9 @@ export function Login1()
             
             <div>
             <button onClick={()=>LoginData()}>Login</button>
-            <button>Guest Login</button>
+            <button onClick={()=>guestLogin()}>Guest Login</button>
             </div>
-            <p className="login__enterDetails--signup">New User? Create Account <Link>Signup!</Link> </p>
+            <p className="login__enterDetails--signup">New User? Create Account <Link to={"/Sign_up"}>Signup!</Link> </p>
         </div>
         </section>
 
