@@ -1,152 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap');
-*
-{
-    margin: 0;
-    /* padding: 0; */
-    box-sizing: border-box;
-    
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  /* padding: 0; */
+  box-sizing: border-box;
 }
 :root {
-    --font-clr:#fa005a;
-    --font-spanClr:#fb327a;
-    --yellow-clr:#ffc500;
-    --font-secondary:#00c7ff;
+  --font-clr: #fa005a;
+  --font-spanClr: #fb327a;
+  --yellow-clr: #ffc500;
+  --font-secondary: #00c7ff;
 }
 
-.home{
-    display: flex;
-    background-color: #17181c;
-    min-height: 100vh;
+.home {
+  display: flex;
+  background-color: #17181c;
+  min-height: 100vh;
 }
-.home li
-{
-    list-style: none;
-   
+.home li {
+  list-style: none;
 }
 
-.home_postsSection
-{
-    flex: 1;
-    text-align: center;
-
-
+.home_postsSection {
+  flex: 1;
+  text-align: center;
 }
-.home_postsSection-newPost
-{
-    width: 700px;
-    /* background-color: white; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    background-color: #1e1f23;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid white;
-    border-radius: 5px;
-
+.home_postsSection-newPost {
+  width: 700px;
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  background-color: #1e1f23;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 5px;
 }
-.home_postsSection-newPost textarea
-{
- outline: 0;
- border: 0;
- background-color: var(--font-primary);
+.home_postsSection-newPost textarea {
+  outline: 0;
+  border: 0;
+  background-color: var(--font-primary);
 }
-.home_postsSection-newPost label
-{
-    color: var(--font-primary);
+.home_postsSection-newPost label {
+  color: var(--font-primary);
 }
-.home_postsSection-filters button
-{
-    border: 1px solid white;
-    background-color: #1e1f23;
-    font-size: 22px;
-    color: white;
-    margin: 10px 25px;
-    font-weight: 600;
-    font-family:Noto Sans, sans-serif;
-    padding: 10px 10px;
-    border-radius: 8px;
-
-    
+.home_postsSection-filters button {
+  border: 1px solid white;
+  background-color: #1e1f23;
+  font-size: 22px;
+  color: white;
+  margin: 10px 25px;
+  font-weight: 600;
+  font-family: Noto Sans, sans-serif;
+  padding: 10px 10px;
+  border-radius: 8px;
 }
-.home__postsSection__posts
-{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 10px;
-    margin-top: 50px;
-    background-color: #1e1f23;
-    width: 700px;
-    margin: auto;
-    margin-top: 25px;
-    text-align: center;
-    padding: 20px 0px;
-    padding-left: 50px;
-    border: 0.1px solid white;
+.home__postsSection__posts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  margin-top: 50px;
+  background-color: #1e1f23;
+  width: 700px;
+  margin: auto;
+  margin-top: 25px;
+  text-align: center;
+  padding: 20px 0px;
+  padding-left: 50px;
+  border: 0.1px solid white;
 }
-.home__postsSection__posts img
-{
-    height: 300px;
-    width: 550px;
-    border-radius: 10px;
-    padding: 10px 10px;
-
+.home__postsSection__posts img {
+  height: 300px;
+  width: 550px;
+  border-radius: 10px;
+  padding: 10px 10px;
 }
 
-.home__postsSection__posts-fName
-{
-    font-size: 25px;
-    font-weight: 600;
-    color: #2196F3;
-    font-family: 'Noto Sans', sans-serif;
-    padding: 10px 10px;
+.home__postsSection__posts-fName {
+  font-size: 25px;
+  font-weight: 600;
+  color: #2196f3;
+  font-family: "Noto Sans", sans-serif;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-.home__postsSection__posts-fName span
-{
-    font-size: 15px;
-    font-weight: 400;
-    color: #90caf9;
+.home__postsSection__posts-fName img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
 }
-.home__postsSection__posts-Content
-{
-    color: #2196F3;
-    padding: 10px 10px;
-    font-weight: 600;
+.home__postsSection__posts-fName span {
+  font-size: 15px;
+  font-weight: 400;
+  color: #90caf9;
 }
-.home__postsSection__posts-button
-{
-    display: flex;
-    align-items: center;
-    padding: 10px 10px;
-    color: white;
+.home__postsSection__posts-Content {
+  color: #2196f3;
+  padding: 10px 10px;
+  font-weight: 600;
 }
-.home__postsSection__posts-button svg
-{
-    
-    margin:0px 13px;
+.home__postsSection__posts-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  color: white;
 }
-.home__postsSection__posts-fName select
-{
-    outline: 0;
-    border: 0;
-    width: 18px;
-    margin-left: 350px;
-    background-color: #1e1f23;
-    color: #fa005a;
-}   
-.editSectionPost
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(239, 234, 234, 0.4);
+.home__postsSection__posts-button svg {
+  margin: 0px 13px;
 }
-.editSectionPost-details
-{
-    width: 400px;
+.home__postsSection__posts-fName select {
+  outline: 0;
+  border: 0;
+  width: 18px;
+  margin-left: 350px;
+  background-color: #1e1f23;
+  color: #fa005a;
+}
+.editSectionPost {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.editSectionPost-details {
+  width: 400px;
   height: 300px;
   margin: auto;
   margin-top: 10%;
@@ -161,12 +149,11 @@
   padding: 10px 10px;
 }
 
-.editSectionPost-details input
-{
-    outline: 0;
-    border: 0;
-    border-bottom: 1px solid var(--font-primary);
-    background-color: #1e1f23;
-    color:var(--font-primary);
-    font-size: 16px;
+.editSectionPost-details input {
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid var(--font-primary);
+  background-color: #1e1f23;
+  color: var(--font-primary);
+  font-size: 16px;
 }
