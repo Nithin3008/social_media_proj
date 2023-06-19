@@ -75,7 +75,13 @@ export function UserProvider({children})
         console.log(result1)
         const result2=await editUser(result1)
     }
+
+    function userAvatars(userName)
+    {
+      const url=Users.find((val)=>val.username===userName)
+      return url.avatar
+    }
     return(<>
-    <UsersContext.Provider value={{followersExist,editUsers}} >{children}</UsersContext.Provider>
+    <UsersContext.Provider value={{followersExist,editUsers,userAvatars}} >{children}</UsersContext.Provider>
     </>)
 }
