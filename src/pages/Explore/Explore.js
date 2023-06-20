@@ -35,11 +35,14 @@ export function Explore1() {
                 {val.firstName} <span>{val.username}</span>
               </li>
               <li>
-                <img
-                  alt="postPic"
-                  src={val.img}
-                  onClick={() => nav(`/PostDetails/${val._id}`)}
-                ></img>
+                {val.img?(
+                   <img
+                   alt="postPic"
+                   src={val.img}
+                   onClick={() => nav(`/PostDetails/${val._id}`)}
+                 ></img>):null
+                }
+               
               </li>
               <li className="Explore__postsSection__posts-Content">
                 {val.content}
