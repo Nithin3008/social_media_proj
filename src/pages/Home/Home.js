@@ -103,7 +103,7 @@ export function Home1() {
           {PostsData.map((val) => (
             <ul key={val._id} className="home__postsSection__posts">
               <li className="home__postsSection__posts-fName">
-                <img src={userAvatars(val.username)}></img>
+                <img  onClick={() => nav(`/Profile1/${val.username}`)} src={userAvatars(val.username)}></img>
                 {val.firstName} <span>{val.username}</span>
                 <button
                   style={{ marginLeft: "150px" }}
