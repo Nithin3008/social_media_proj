@@ -53,7 +53,7 @@ function Signup(userDetails)
                       {
                         toast.success(`Welcome ${userDetails.fName}`,{
                           position:"top-center"})
-                        nav("/Login1")
+                        nav("/")
                       }
                       
                     } catch (error) {
@@ -65,6 +65,11 @@ function Signup(userDetails)
                  
                   signupHandler()
       }    
-  return (<><AuthContext.Provider value={{ LoginHandler,Signup }}>{children}</AuthContext.Provider>
+      function logoutFun()
+      {
+        localStorage.clear()  
+        nav("/")
+      }
+  return (<><AuthContext.Provider value={{ LoginHandler,Signup,logoutFun }}>{children}</AuthContext.Provider>
   <ToastContainer></ToastContainer></>);
 }
