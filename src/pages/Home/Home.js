@@ -5,6 +5,7 @@ import { PostsContext } from "../../Services/HelperFunc/PostFunc";
 import { Suggested } from "../../components/suggestion/SuggestionSec";
 import { RouteSec } from "../../components/RouteSection/RouteSec";
 import { useNavigate } from "react-router";
+import { UsersContext } from "../../Services/HelperFunc/UsersFunc";
 // import Modal from "react-overlays/Modal";
 
 export function Home1() {
@@ -19,11 +20,13 @@ export function Home1() {
     uploadNewPost,
     editPost,
     deletePost,
+    sortByDate,
   } = useContext(PostsContext);
   const [show, setShow] = useState(false);
   const [editObject, setObject] = useState({});
   const [editDetails, setDetails] = useState();
   const [editImage, setImage] = useState();
+  const { userAvatars } = useContext(UsersContext);
   const nav = useNavigate();
   const postsD = [...Posts].filter(
     (val) => val.username == loggedInUser.username
@@ -40,11 +43,6 @@ export function Home1() {
     uploadNewPost(postDetails);
     console.log(postDetails);
   }
-  // function handleSetImage(e)
-  // {
-  //     postDetails.img=e.target.files[0]
-
-  // }
   function sendEditPost() {
     const x = { ...editObject, img: editImage, content: editDetails };
     editPost(x);
@@ -99,13 +97,13 @@ export function Home1() {
           </div>
           <div className="home_postsSection-filters">
             <button>Trending🔥🔥</button>
-            <button>Sort By Date</button>
+            <button onClick={() => sortByDate()}>Sort By Date</button>
           </div>
 
           {PostsData.map((val) => (
             <ul key={val._id} className="home__postsSection__posts">
               <li className="home__postsSection__posts-fName">
-                <img src={loggedInUser.avatar}></img>
+                <img src={userAvatars(val.username)}></img>
                 {val.firstName} <span>{val.username}</span>
                 <button
                   style={{ marginLeft: "150px" }}
