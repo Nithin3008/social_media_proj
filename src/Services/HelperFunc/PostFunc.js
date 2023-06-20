@@ -65,126 +65,108 @@ export function PostsProvider({ children }) {
     unLike();
   }
 
-//creating new posts
-async function uploadImage(post)
-{
-  try {
-    const file=post.img
-    console.log(file)
-  console.log(file,"image path")
-  const present_key="social_media_proj"
-  const formData=new FormData()
-  formData.append('file',file)
-  formData.append('upload_preset',present_key)
-    if(post.img)
-    {
-      const res=await fetch(`https://api.cloudinary.com/v1_1/king-cloud/image/upload`,{
-      method:"POST",
-      body:formData
-    })
-    const x=await res.json()
-    console.log(x.url)
-    post.img=x.url
-    }
-    else
-    {
-      return {...post,img:null}
-    }
-  } catch (error) {
-    console.log(error)
-    }
-
-    return post
-}
-  const newpost=async(post)=>
-  {
-  try {
-    const response=await axios.post("/api/posts",{
-      postData: post,
-    },{
-      headers: {
-        authorization: encodedToken,
-      },
-    })
-    if(response.status===201)
-    {
-      return response.data.posts
-    }
-    console.log(response)
-  } catch (error) {
-    console.log(error)
-  }
-  
-}
-
-async function uploadNewPost(post)
-{
-  const result1=await uploadImage(post)
-  console.log(result1)
-  const result2=await newpost(result1)
-  dispatcherMain({type:"getPosts",payload:result2})
-}
-
-
-
-
-
-
-
-
-  const edit=async(Post)=>
-  {
+  //creating new posts
+  async function uploadImage(post) {
     try {
-      const response=await axios.post(`/api/posts/edit/${Post._id}`,{postData:Post},
+      const file = post.img;
+      console.log(file);
+      console.log(file, "image path");
+      const present_key = "social_media_proj";
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", present_key);
+      if (post.img) {
+        const res = await fetch(
+          `https://api.cloudinary.com/v1_1/king-cloud/image/upload`,
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+        const x = await res.json();
+        console.log(x.url);
+        post.img = x.url;
+      } else {
+        return { ...post, img: null };
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+    return post;
+  }
+  const newpost = async (post) => {
+    try {
+      const response = await axios.post(
+        "/api/posts",
+        {
+          postData: post,
+        },
         {
           headers: {
             authorization: encodedToken,
           },
-        })
-        if(response.status===201)
-        {
-          return response.data.posts
         }
-        console.log(response)
+      );
+      if (response.status === 201) {
+        return response.data.posts;
+      }
+      console.log(response);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
+  };
+
+  async function uploadNewPost(post) {
+    const result1 = await uploadImage(post);
+    console.log(result1);
+    const result2 = await newpost(result1);
+    dispatcherMain({ type: "getPosts", payload: result2 });
   }
 
-
-
-  async function editPost(editPost)
-  {
-    const result1=await uploadImage(editPost)
-    console.log(result1)
-    const result2=await edit(result1)
-    console.log(result2)
-    dispatcherMain({type:"getPosts",payload:result2})
-  }
-
-const deletePost=async(postId)=>
-{
-  try {
-    const response=await axios.delete (`/api/posts/${postId}`,{
-      headers: {
-      authorization: encodedToken,
-    },
-
-    })
-    console.log(response.data.posts)
-    if(response.status===201)
-    {
-      dispatcherMain({type:"getPosts",payload:response.data.posts})
+  const edit = async (Post) => {
+    try {
+      const response = await axios.post(
+        `/api/posts/edit/${Post._id}`,
+        { postData: Post },
+        {
+          headers: {
+            authorization: encodedToken,
+          },
+        }
+      );
+      if (response.status === 201) {
+        return response.data.posts;
+      }
+      console.log(response);
+    } catch (error) {
+      console.log(error);
     }
-  } catch (error) {
-    console.log(error)
+  };
+
+  async function editPost(editPost) {
+    const result1 = await uploadImage(editPost);
+    console.log(result1);
+    const result2 = await edit(result1);
+    console.log(result2);
+    dispatcherMain({ type: "getPosts", payload: result2 });
   }
-}
 
-
-
-
-
+  const deletePost = async (postId) => {
+    try {
+      const response = await axios.delete(`/api/posts/${postId}`, {
+        headers: {
+          authorization: encodedToken,
+        },
+      });
+      console.log(response.data.posts);
+      if (response.status === 201) {
+        dispatcherMain({ type: "getPosts", payload: response.data.posts });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   function checkLikes() {
     const x = [...Posts].map((post) =>
@@ -194,8 +176,14 @@ const deletePost=async(postId)=>
         ? false
         : post._id
     );
-    
+
     return x;
+  }
+
+  function sortByDate() {
+    const sortData = Posts.sort(
+      (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+    );
   }
 
   //////////////BookMark-Section////////////////////////////////
@@ -231,8 +219,8 @@ const deletePost=async(postId)=>
           }
         );
         console.log(response.data.bookmarks);
-        let book=response.data.bookmarks
-        const bookMarkedPosts=Posts.filter((post)=>book.includes(post._id))
+        let book = response.data.bookmarks;
+        const bookMarkedPosts = Posts.filter((post) => book.includes(post._id));
         dispatcherMain({
           type: "AddBookmarks",
           payload: bookMarkedPosts,
@@ -286,7 +274,8 @@ const deletePost=async(postId)=>
           removeBookmark,
           editPost,
           uploadNewPost,
-          deletePost
+          deletePost,
+          sortByDate,
         }}
       >
         {children}
