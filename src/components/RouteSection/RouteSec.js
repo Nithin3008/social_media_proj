@@ -48,7 +48,6 @@ export function RouteSec() {
           <NavLink
             className="RouteSec_pages-navLinks"
             to={"/Bookmark1"}
-            onClick={() => intialBookMarks()}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

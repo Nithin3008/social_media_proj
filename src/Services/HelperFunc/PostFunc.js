@@ -39,6 +39,7 @@ export function PostsProvider({ children }) {
         if(response.status===201)
         {
           dispatcherMain({ type: "getPosts", payload: response.data.posts });
+
         }
         
       } catch (error) {
@@ -153,6 +154,7 @@ export function PostsProvider({ children }) {
     const result2 = await edit(result1);
     console.log(result2);
     dispatcherMain({ type: "getPosts", payload: result2 });
+    intialBookMarks()
   }
 
   const deletePost = async (postId) => {
@@ -199,6 +201,7 @@ export function PostsProvider({ children }) {
             authorization: encodedToken,
           },
         });
+        
         dispatcherMain({
           type: "AddBookmarks",
           payload: response.data.bookmarks,
@@ -225,14 +228,15 @@ export function PostsProvider({ children }) {
         {
           toast.success(`Added post to Bookmark`,{
             position:"bottom-right"})
-          let book = response.data.bookmarks;
-        const bookMarkedPosts = Posts.filter((post) => book.includes(post._id));
+
+       
+        }
+        // let book = response.data.bookmarks;
+        // const bookMarkedPosts = Posts.filter((post) => book.includes(post._id));
         dispatcherMain({
           type: "AddBookmarks",
-          payload: bookMarkedPosts,
+          payload: response.data.bookmarks,
         });
-        }
-        
       } catch (error) {
         console.log(error);
       }
@@ -257,12 +261,14 @@ export function PostsProvider({ children }) {
         {
           toast.error(`Removed from Bookmark`,{
             position:"bottom-right"})
-          dispatcherMain({
-            type: "AddBookmarks",
-            payload: response.data.bookmarks,
-          });
+          
         }
-       
+        let book = response.data.bookmarks;
+        const bookMarkedPosts = Posts.filter((post) => book.includes(post._id));
+        dispatcherMain({
+          type: "AddBookmarks",
+          payload:bookMarkedPosts ,
+        });
       } catch (error) {
         console.log(error);
       }
@@ -271,7 +277,8 @@ export function PostsProvider({ children }) {
   }
 
   function checkBookMarks() {
-    return BookMarks.map((val) => val._id);
+
+    return BookMarks
   }
 
   return (
@@ -282,7 +289,6 @@ export function PostsProvider({ children }) {
           likePosts,
           checkLikes,
           unLikePosts,
-          intialBookMarks,
           addBookmark,
           checkBookMarks,
           removeBookmark,
