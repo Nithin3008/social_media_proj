@@ -1,12 +1,10 @@
-:root
-{
-  --background-btn:#edf1ff;
-  --clr-btn:#151619;
-  --sec-clr:#fffbed
+:root {
+  --background-btn: #edf1ff;
+  --clr-btn: #151619;
+  --sec-clr: #fffbed;
 }
 .Suggest_followers {
   width: fit-content;
-  /* background-color: #1e1f23; */
   border: 1px solid white;
   height: fit-content;
   background-color: #1e1f23;
@@ -42,4 +40,20 @@
   color: var(--clr-btn);
   font-size: 15px;
   font-size: 500;
+}
+.UserProfile {
+  display: flex;
+  font-size: 18px;
+}
+.UserProfile:hover {
+  cursor: pointer;
+}
+.UserProfile img {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+.UserProfile p {
+  color: #edf1ff;
 }
