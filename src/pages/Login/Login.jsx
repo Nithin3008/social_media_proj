@@ -40,7 +40,7 @@ export function Login1()
             <button onClick={()=>LoginData()}>Login</button>
             <button onClick={()=>guestLogin()}>Guest Login</button>
             </div>
-            <p className="login__enterDetails--signup">New User? Create Account <Link to={"/Sign_up"}>Signup!</Link> </p>
+            <p className="login__enterDetails--signup">New User? Create Account <Link className="signupLink" to={"/Sign_up"}>Signup!</Link> </p>
         </div>
         </section>
 

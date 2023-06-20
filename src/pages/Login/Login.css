@@ -67,8 +67,13 @@
 }
 .login__enterDetails button:hover {
   cursor: pointer;
-  background-color: white;
+  background-color:#edf1ff;
+  color: #00c7ff;
 }
 .login__enterDetails--signup {
   margin-top: 10px;
+}
+.signupLink{
+  text-decoration: none;
+  color: orangered;
 }
