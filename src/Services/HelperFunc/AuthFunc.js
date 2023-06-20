@@ -13,7 +13,6 @@ export function AuthProvider({ children }) {
   function LoginHandler({userName,pwd}) {
     console.log(userName,pwd)
     const loginHandle1 = async () => {
-      // console.log(userName,pwd)
         try {
             const response = await axios.post(`/api/auth/login`, {
                 username:userName,
@@ -28,6 +27,11 @@ export function AuthProvider({ children }) {
                   toast.success(`Welcome Back`,{
                   position:"top-center"})
                    nav("/Home1")
+              }
+              else
+              {
+                toast.error(`Wrong Details Please try Again`,{
+                  position:"top-center"})
               }
         } catch (error) {
             console.log(error)
@@ -68,6 +72,8 @@ function Signup(userDetails)
       function logoutFun()
       {
         localStorage.clear()  
+        toast.success(`Bye Bye`,{
+          position:"top-center"})
         nav("/")
       }
   return (<><AuthContext.Provider value={{ LoginHandler,Signup,logoutFun }}>{children}</AuthContext.Provider>
