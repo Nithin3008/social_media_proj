@@ -31,11 +31,12 @@ export function Explore1() {
                 className="Explore__postsSection__posts-fName"
                 onClick={() => nav(`/Profile1/${val.username}`)}
               >
-                <img src={userAvatars(val.username)}></img>
+                <img alt="profilePic" src={userAvatars(val.username)}></img>
                 {val.firstName} <span>{val.username}</span>
               </li>
               <li>
                 <img
+                  alt="postPic"
                   src={val.img}
                   onClick={() => nav(`/PostDetails/${val._id}`)}
                 ></img>
