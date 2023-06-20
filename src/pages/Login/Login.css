@@ -1,87 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap');
-*
-{
-    margin: 0;
-    /* padding: 0; */
-    /* box-sizing: border-box; */
-    font-family:'Noto Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  /* padding: 0; */
+  /* box-sizing: border-box; */
+  font-family: "Noto Sans", sans-serif;
 }
-:root
-{
-    --font-clr:#00c7ff;
-    --input-bg:#013741;
-    --background--clr:#000103;
-    --baclground-btn:#008bb3;
-    --font--btn:#00c7ff
-
-
+:root {
+  --font-clr: #00c7ff;
+  --input-bg: #013741;
+  --background--clr: #000103;
+  --baclground-btn: #008bb3;
+  --font--btn: #00c7ff;
 }
- .login
-{
-
-    display: flex;
-    height: 100vh;
-    flex-direction: row;
-    overflow: hidden;
-    background-color: #000103;
+.login {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  overflow: hidden;
+  background-color: #000103;
 }
 
-.login__enterDetails
-{
-    color: #00c7ff;
-    font-size: 20px;
-    display:flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
+.login__enterDetails {
+  color: #00c7ff;
+  font-size: 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.login__enterDetails h1
-{
-    font-size: 48px;
-    font-weight: 400;
-    font-family: 'Noto Sans', sans-serif;
-    color: #00c7ff;
+.login__enterDetails h1 {
+  font-size: 48px;
+  font-weight: 400;
+  font-family: "Noto Sans", sans-serif;
+  color: #00c7ff;
 }
-.login__enterDetails input
-{
-    outline: 0;
-    border: 0;
-    background-color: #013741;
-    border-radius: 10px;
-    height: 40px;
-    padding: 5px ;
-    color: #fff;
-    width: 300px;
-    padding: 10px 10px;
-    font-size: 16px;
-    font-size: 500;
+.login__enterDetails input {
+  outline: 0;
+  border: 0;
+  background-color: #013741;
+  border-radius: 10px;
+  height: 40px;
+  padding: 5px;
+  color: #fff;
+  width: 300px;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-size: 500;
 }
-.login__enterDetails p
-{
-    padding: 10px 10px;
+.login__enterDetails p {
+  padding: 10px 10px;
 }
-.login__enterDetails button
-{
-    background-color: var(--baclground-btn);
-    border: 0;
-    padding: 10px 10px;
-    border-radius: 10px;
-    color: var(--font--btn);
-    font-size: 20px;
-    font-weight: 400;
-    font-family: 'Noto Sans', sans-serif;
-    margin-top: 15px;
-    margin-left: 15px;
-    cursor: pointer;
+.login__enterDetails button {
+  background-color: var(--baclground-btn);
+  border: 0;
+  padding: 10px 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Noto Sans", sans-serif;
+  margin-top: 15px;
+  margin-left: 15px;
+  cursor: pointer;
 }
-.login__enterDetails button:hover
-{
-    cursor: pointer;
-    background-color: white;
+.login__enterDetails button:hover {
+  cursor: pointer;
+  background-color: white;
 }
-.login__enterDetails--signup
-{
-    margin-top: 10px;
+.login__enterDetails--signup {
+  margin-top: 10px;
 }
