@@ -1,7 +1,8 @@
 import { createContext, useContext } from "react";
 import axios from "axios";
 import { MainContext } from "../Context/MainReducer";
-
+import {  ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const PostsContext = createContext();
 export function PostsProvider({ children }) {
@@ -35,8 +36,11 @@ export function PostsProvider({ children }) {
             },
           }
         );
-        console.log(response.data.posts);
-        dispatcherMain({ type: "getPosts", payload: response.data.posts });
+        if(response.status===201)
+        {
+          dispatcherMain({ type: "getPosts", payload: response.data.posts });
+        }
+        
       } catch (error) {
         console.log(error);
       }
@@ -56,7 +60,6 @@ export function PostsProvider({ children }) {
             },
           }
         );
-        console.log(response.data.posts);
         dispatcherMain({ type: "getPosts", payload: response.data.posts });
       } catch (error) {
         console.log(error);
@@ -196,7 +199,6 @@ export function PostsProvider({ children }) {
             authorization: encodedToken,
           },
         });
-        console.log(response.data);
         dispatcherMain({
           type: "AddBookmarks",
           payload: response.data.bookmarks,
@@ -219,13 +221,18 @@ export function PostsProvider({ children }) {
             },
           }
         );
-        console.log(response.data.bookmarks);
-        let book = response.data.bookmarks;
+        if(response.status===200)
+        {
+          toast.success(`Added post to Bookmark`,{
+            position:"bottom-right"})
+          let book = response.data.bookmarks;
         const bookMarkedPosts = Posts.filter((post) => book.includes(post._id));
         dispatcherMain({
           type: "AddBookmarks",
           payload: bookMarkedPosts,
         });
+        }
+        
       } catch (error) {
         console.log(error);
       }
@@ -245,11 +252,17 @@ export function PostsProvider({ children }) {
             },
           }
         );
-        console.log(response.data.bookmarks);
-        dispatcherMain({
-          type: "AddBookmarks",
-          payload: response.data.bookmarks,
-        });
+        console.log(response.status)
+        if(response.status===200)
+        {
+          toast.error(`Removed from Bookmark`,{
+            position:"bottom-right"})
+          dispatcherMain({
+            type: "AddBookmarks",
+            payload: response.data.bookmarks,
+          });
+        }
+       
       } catch (error) {
         console.log(error);
       }
