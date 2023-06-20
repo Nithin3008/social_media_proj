@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 import axios from "axios";
 import { MainContext } from "../Context/MainReducer";
-import { formatDate } from "../../backend/utils/authUtils";
+
 
 export const PostsContext = createContext();
 export function PostsProvider({ children }) {
@@ -184,6 +184,7 @@ export function PostsProvider({ children }) {
     const sortData = Posts.sort(
       (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
     );
+    dispatcherMain({type:"getPosts",payload:sortData})
   }
 
   //////////////BookMark-Section////////////////////////////////
