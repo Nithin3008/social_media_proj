@@ -47,10 +47,117 @@ export const posts = [
   {
     _id: uuid(),
     content:
+      "Final Episode of DemonSlayer was excellent hope they release the next season ea",
+    likes: {
+      likeCount: 2,
+      likedBy: [
+        {
+          _id: uuid(),
+          firstName: "Vegeta",
+          lastName: "Bejīta Yonsei",
+          username: "PrinceVegeta",
+          password: "vegetaTrunks",
+          createdAt: formatDate(),
+          updatedAt: formatDate(),
+          bookmarks: [],
+          bio:"Master Ultra instict",
+          portfolio:"https://dragonball.fandom.com/wiki/Vegeta",
+          avatar:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/vegeta.webp",
+        },
+        {
+          _id: uuid(),
+          firstName: "Tony",
+          lastName: "Stark",
+          username: "tonyStark",
+          password: "ironman",
+          createdAt: formatDate(),
+          updatedAt: formatDate(),
+          bookmarks: [],
+          bio:"Scientist,Philanthropist,Avengers",
+          portfolio:"https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man",
+          avatar:"https://github.com/Nithin3008/social_media_proj/blob/master/public/images/tony.jpg?raw=true",
+        },
+      ],
+      dislikedBy: [],
+      
+    },
+    firstName:"Kakshi",
+    username: "kakshiOfTheSharigan",
+    createdAt: new Date('2023-06-25'),
+    updatedAt: formatDate(),
+    comment:[],
+    following:[],
+    followers:[],
+    img:""
+  },
+  {
+    _id: uuid(),
+    content:
+      "waiting for next season of Jujutsu Kaisen",
+    likes: {
+      likeCount: 1,
+      likedBy: [
+        {
+          _id: uuid(),
+          firstName: "Vegeta",
+          lastName: "Bejīta Yonsei",
+          username: "PrinceVegeta",
+          password: "vegetaTrunks",
+          createdAt: formatDate(),
+          updatedAt: formatDate(),
+          bookmarks: [],
+          bio:"Master Ultra instict",
+          portfolio:"https://dragonball.fandom.com/wiki/Vegeta",
+          avatar:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/vegeta.webp",
+        },
+        
+      ],
+      dislikedBy: [],
+      
+    },
+    firstName:"Kakshi",
+    username: "kakshiOfTheSharigan",
+    createdAt: new Date('2023-06-21'),
+    updatedAt: formatDate(),
+    comment:[],
+    following:[],
+    followers:[],
+    img:""
+  },
+  {
+    _id: uuid(),
+    content:
       "Waiting for Attack on Titan Final episode",
     likes: {
-      likeCount: 0,
-      likedBy: [],
+      likeCount: 2,
+      likedBy: [
+        {
+          _id: uuid(),
+          firstName: "Vegeta",
+          lastName: "Bejīta Yonsei",
+          username: "PrinceVegeta",
+          password: "vegetaTrunks",
+          createdAt: formatDate(),
+          updatedAt: formatDate(),
+          bookmarks: [],
+          bio:"Master Ultra instict",
+          portfolio:"https://dragonball.fandom.com/wiki/Vegeta",
+          avatar:"https://raw.githubusercontent.com/Nithin3008/social_media_proj/master/public/images/vegeta.webp",
+        },
+        {
+          _id: uuid(),
+          firstName: "Tony",
+          lastName: "Stark",
+          username: "tonyStark",
+          password: "ironman",
+          createdAt: formatDate(),
+          updatedAt: formatDate(),
+          bookmarks: [],
+          bio:"Scientist,Philanthropist,Avengers",
+          portfolio:"https://marvelcinematicuniverse.fandom.com/wiki/Iron_Man",
+          avatar:"https://github.com/Nithin3008/social_media_proj/blob/master/public/images/tony.jpg?raw=true",
+        },
+      ],
       dislikedBy: [],
       
     },
@@ -98,5 +205,5 @@ export const posts = [
     following:[],
     followers:[],
     img:"https://github.com/Nithin3008/social_media_proj/blob/master/public/images/Gojo.jpg?raw=true"
-  },
+  },  
 ];
