@@ -61,6 +61,6 @@ export function  FollowProvider({children})
     }
     return(<>
     <FollowContext.Provider value={{setFollowers,setUnFollowers}}>{children}</FollowContext.Provider>
-    <ToastContainer></ToastContainer>
+   
     </>)
 }

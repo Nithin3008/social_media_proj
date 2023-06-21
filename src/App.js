@@ -7,7 +7,8 @@ import { PostDetails } from './pages/PostDetails/postDetails';
 import { Explore1 } from './pages/Explore/Explore';
 import { Bookmark1 } from './pages/Bookmarks/Bookmark';
 import { Profile1 } from './pages/ProfileSec/Profile';
-
+import {  ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
         <Route path="/PostDetails/:postId" element={<PostDetails/>}></Route>
         <Route path="/Profile1/:ProfileId" element={<Profile1/>}></Route>
        </Routes>
+       <ToastContainer></ToastContainer>
     </div>
   );
 }

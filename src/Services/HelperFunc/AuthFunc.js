@@ -76,6 +76,5 @@ function Signup(userDetails)
           position:"top-center"})
         nav("/")
       }
-  return (<><AuthContext.Provider value={{ LoginHandler,Signup,logoutFun }}>{children}</AuthContext.Provider>
-  <ToastContainer></ToastContainer></>);
+  return (<><AuthContext.Provider value={{ LoginHandler,Signup,logoutFun }}>{children}</AuthContext.Provider></>);
 }
