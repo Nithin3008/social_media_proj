@@ -191,6 +191,12 @@ export function PostsProvider({ children }) {
     );
     dispatcherMain({type:"getPosts",payload:sortData})
   }
+  function Trending()
+  {
+    const trendingData=Posts.sort((a,b)=>b.likes.likeCount-a.likes.likeCount)
+    console.log(trendingData)
+    dispatcherMain({type:"getPosts",payload:trendingData})
+  }
 
   //////////////BookMark-Section////////////////////////////////
   function intialBookMarks() {
@@ -296,6 +302,7 @@ export function PostsProvider({ children }) {
           uploadNewPost,
           deletePost,
           sortByDate,
+          Trending
         }}
       >
         {children}

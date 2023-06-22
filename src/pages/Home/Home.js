@@ -21,6 +21,7 @@ export function Home1() {
     editPost,
     deletePost,
     sortByDate,
+    Trending
   } = useContext(PostsContext);
   const [show, setShow] = useState(false);
   const [editObject, setObject] = useState({});
@@ -96,7 +97,7 @@ export function Home1() {
             <button onClick={() => checkValue()}>Post</button>
           </div>
           <div className="home_postsSection-filters">
-            <button>Trending🔥🔥</button>
+            <button onClick={()=>Trending()}>Trending🔥🔥</button>
             <button onClick={() => sortByDate()}>Sort By Date</button>
           </div>
 
