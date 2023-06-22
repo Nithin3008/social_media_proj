@@ -35,12 +35,12 @@ export function Suggested() {
 
               <button
                 onClick={() =>
-                  followersExist(val.username)
+                  followersExist(val._id)
                     ? setUnFollowers(val._id)
                     : setFollowers(val._id)
                 }
               >
-                {followersExist(val.username) ? "unfollow" : "Follow"}
+                {followersExist(val._id) ? "unfollow" : "Follow"}
               </button>
             </ul>
           ))}

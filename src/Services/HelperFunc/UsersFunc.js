@@ -7,8 +7,9 @@ export function UserProvider({ children }) {
   const { dispatcherMain, loggedInUserFollwers, Users } =
     useContext(MainContext);
   const encodedToken = localStorage.getItem("token");
-  function followersExist(userName) {
-    const check = loggedInUserFollwers.find((user) => user === userName);
+
+  function followersExist(userId) {
+    const check = loggedInUserFollwers.find((user) => user._id=== userId);
     return check === undefined ? false : true;
   }
   async function uploadImage(post) {
@@ -52,6 +53,7 @@ export function UserProvider({ children }) {
         }
       );
       dispatcherMain({ type: "userDetails", payload: response.data.user });
+      console.log(response.data.user)
     } catch (error) {
       console.log(error);
     }

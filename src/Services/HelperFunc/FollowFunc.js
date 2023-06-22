@@ -23,10 +23,10 @@ export function  FollowProvider({children})
                     toast.success(`You following a new user`,{
                         position:"top-center"})
                   }
-                  let followers=response.data.user.following.map((val)=>val.username)
+                  
                   dispatcherMain({type:"userDetails",payload:response.data.user})
-                  dispatcherMain({type:"AddFollowing",payload:followers})
-                  console.log(followers)
+                  dispatcherMain({type:"AddFollowing",payload:response.data.user.following})
+                  console.log(response.data.user)
             } catch (error) {
                 console.log(error)
             }
@@ -36,7 +36,6 @@ export function  FollowProvider({children})
 
     function setUnFollowers(followUserId)
     {
-        console.log(followUserId)
         const setUnFollow=async()=>
         {
             try {
@@ -50,9 +49,9 @@ export function  FollowProvider({children})
                     toast.warning(`You unfollowing user`,{
                         position:"top-center"})
                   }
-                  let followers=response.data.user.following.map((val)=>val.username)
+                  
                   dispatcherMain({type:"userDetails",payload:response.data.user})
-                  dispatcherMain({type:"AddFollowing",payload:followers})
+                  dispatcherMain({type:"AddFollowing",payload:response.data.user.following})
             } catch (error) {
                 console.log(error)
             }
