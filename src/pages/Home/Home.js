@@ -33,7 +33,7 @@ export function Home1() {
     (val) => val.username == loggedInUser.username
   );
   const postFollow = [...Posts].filter((posts) =>
-    loggedInUserFollwers.find((user) => user === posts.username)
+    loggedInUserFollwers.find((user) => user.username === posts.username)
   );
   const PostsData = [...postsD, ...postFollow];
   const postDetails = {
