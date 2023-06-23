@@ -1,82 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap');
-*
-{
-    margin: 0;
-    /* padding: 0; */
-    /* box-sizing: border-box; */
-    
-}
-:root
-{
-    --background-clr-sign:#8b3f52;
-    --font-clr-sign:#00AE95;
-    --background--input:#f5f1fa;
-    --background--btn:#b2fdf3;
-    --font-btn:#009681;
-    --input--clr:#BE9BF3;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+
 }
 
-.signUp
-{
-    display: flex;
-    height: 100vh;
-    flex-direction: row;
-    overflow: hidden;
-    background-color:var(--background-clr-sign)
+.signUp {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  overflow: hidden;
+  background-color: var(--background-clr-sign);
 }
-.signup__form
-{
-    color:var( --font-clr-sign);
-    font-size: 20px;
-    font-weight: 700;
-    display:flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
-    font-family: 'Noto Sans', sans-serif;
+.signup__form {
+  color: var(--font-clr-sign);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans", sans-serif;
 }
-.signup__form p
-{
-    color:var( --font-clr-sign);
-    margin-top: 10px;
+.signup__form p {
+  color: var(--font-clr-sign);
+  margin-top: 10px;
 }
-.signup__form input
-{
-    outline: 0;
-    border: 0;
-    background-color: var(--background--input);
-    border-radius: 10px;
-    height: 40px;
-    width: 280px;
-    padding: 10px 10px;
-    color: #17181c;
-    font-size: 16px;
-    font-size: 500;
-    margin-top: 10px;
+.signup__form input {
+  outline: 0;
+  border: 0;
+  background-color: var(--background--input-sign);
+  border-radius: 10px;
+  height: 40px;
+  width: 280px;
+  padding: 10px 10px;
+  color: #17181c;
+  font-size: 16px;
+  font-size: 500;
+  margin-top: 10px;
 }
-.signup__form h1,h2
-{
-    padding: 10px 10px;
+.signup__form h1,
+h2 {
+  padding: 10px 10px;
 }
-.signup__form-signupBtn
-{
-    text-align: center;
+.signup__form-signupBtn {
+  text-align: center;
 }
-.signup__form button
-{
-    border: 0;
-    background-color:var(--background--btn);
-    color:var(--font-btn) ;
-    font-size: 20px;
-    padding: 10px 10px;
-    border-radius: 10px;
-    margin-top: 10px;
-    cursor: pointer;
+.signup__form button {
+  border: 0;
+  background-color: var(--background--btn-sign);
+  color: var(--font-btn);
+  font-size: 20px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
 }
-.signup__form button:hover
-{
-    cursor: pointer;
-    background-color: white;
+.signup__form button:hover {
+  cursor: pointer;
+  background-color: white;
 }
