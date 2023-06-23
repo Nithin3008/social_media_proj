@@ -32,7 +32,10 @@ export function Explore1() {
                 onClick={() => nav(`/Profile1/${val.username}`)}
               >
                 <img alt="profilePic" src={userAvatars(val.username)}></img>
-                {val.firstName} <span>{val.username}</span>
+                <p style={{display:"flex",flexDirection:"column",alignItems:"flex-start"}}>
+                 <p>{val.firstName}</p>  
+                <span>{val.username}</span>
+                 </p>
               </li>
               <li>
                 {val.img?(
@@ -44,7 +47,7 @@ export function Explore1() {
                 }
                
               </li>
-              <li className="Explore__postsSection__posts-Content">
+              <li onClick={() => nav(`/PostDetails/${val._id}`)} className="Explore__postsSection__posts-Content">
                 {val.content}
               </li>
               <li className="Explore__postsSection__posts-button">

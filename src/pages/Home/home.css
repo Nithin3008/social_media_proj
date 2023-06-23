@@ -110,6 +110,7 @@
 .home__postsSection__posts-fName span {
   font-size: 15px;
   font-weight: 300;
+  display: block;
   color: var(--font-clr-common);
 }
 .home__postsSection__posts-Content {

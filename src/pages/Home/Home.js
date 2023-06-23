@@ -108,7 +108,11 @@ export function Home1() {
                   onClick={() => nav(`/Profile1/${val.username}`)}
                   src={userAvatars(val.username)}
                 ></img>
-                {val.firstName} <span>{val.username}</span>
+                
+                 <p style={{display:"flex",flexDirection:"column",alignItems:"flex-start"}}>
+                 <p>{val.firstName}</p>  
+                <span>{val.username}</span>
+                 </p>
                 <p className="dotsForFunc" style={{ marginLeft: "150px" }}>
                   <svg
                     onClick={() =>
@@ -156,7 +160,7 @@ export function Home1() {
                   ></img>
                 ) : null}
               </li>
-              <li className="home__postsSection__posts-Content">
+              <li onClick={() => nav(`/PostDetails/${val._id}`)} className="home__postsSection__posts-Content">
                 {val.content}
               </li>
               <li className="home__postsSection__posts-button">

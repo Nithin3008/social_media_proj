@@ -25,10 +25,13 @@ export function PostDetails() {
         <div className="PostDetails_postsSection">
           <ul className="PostDetails__postsSection__posts">
             <li className="PostDetails__postsSection__posts-fName">
-              {PostsData.firstName} <span>{PostsData.username}</span>
+            <p style={{display:"flex",flexDirection:"column",alignItems:"flex-start"}}>
+                 <p>{PostsData.firstName}</p>  
+                <span>{PostsData.username}</span>
+                 </p>
             </li>
             <li>
-              <img src={PostsData.img}></img>
+                {PostDetails.img?(<img src={PostsData.img}></img>):null} 
             </li>
             <li className="PostDetails__postsSection__posts-Content">
               {PostsData.content}

@@ -146,7 +146,7 @@ export function Profile1() {
                   ></img>
                 ) : null}
               </li>
-              <li className="ProfileSec__postsSection__posts-Content">
+              <li onClick={() => nav(`/PostDetails/${val._id}`)} className="ProfileSec__postsSection__posts-Content">
                 {val.content}
               </li>
               <li className="ProfileSec__postsSection__posts-button">
