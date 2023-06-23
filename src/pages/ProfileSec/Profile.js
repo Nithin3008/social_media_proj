@@ -131,7 +131,6 @@ export function Profile1() {
               </button>
             </div>
           </div>
-          <hr></hr>
           {postsData.map((val) => (
             <ul key={val._id} className="ProfileSec__postsSection__posts">
               <li className="ProfileSec__postsSection__posts-fName">
