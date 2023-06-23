@@ -27,6 +27,7 @@ export function Home1() {
   const [editObject, setObject] = useState({});
   const [editDetails, setDetails] = useState();
   const [editImage, setImage] = useState();
+  const [showEdit,setShowEdit]=useState("")
   const { userAvatars } = useContext(UsersContext);
   const nav = useNavigate();
   const postsD = [...Posts].filter(
@@ -106,8 +107,11 @@ export function Home1() {
               <li className="home__postsSection__posts-fName">
                 <img  onClick={() => nav(`/Profile1/${val.username}`)} src={userAvatars(val.username)}></img>
                 {val.firstName} <span>{val.username}</span>
+                <p className="dotsForFunc" style={{ marginLeft: "150px" }}> 
+                <svg onClick={()=>showEdit===val._id?setShowEdit(""):setShowEdit(val._id)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#edf1ff" strokeWidth="2" strokeLinecap="square" strokeLinejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                <li style={{display:val._id===showEdit?"block":"none"}}>
                 <button
-                  style={{ marginLeft: "150px" }}
+                  
                   onClick={(e) => {
                     setShow(!show);
                     setObject(val);
@@ -118,6 +122,8 @@ export function Home1() {
                   Edit
                 </button>
                 <button onClick={() => deletePost(val._id)}>Delete</button>
+                </li>
+                </p>
               </li>
               <li>
                 {" "}
