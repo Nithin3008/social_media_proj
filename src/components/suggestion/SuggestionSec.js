@@ -21,7 +21,7 @@ export function Suggested() {
           </div>
           <div>
             <p>{loggedInUser.firstName}</p>
-            <p>{loggedInUser.username}</p>
+            <p className="loggedIn__username">{loggedInUser.username}</p>
           </div>
         </div>
         <div className="Suggest_followers">
