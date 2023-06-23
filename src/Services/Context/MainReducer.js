@@ -41,7 +41,6 @@ export function ReducerProv({ children }) {
     }
     return state;
   }
-console.log(state.ExistedUsers)
   return (
     <>
       <MainContext.Provider
