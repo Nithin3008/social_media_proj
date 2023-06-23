@@ -1,13 +1,7 @@
-:root {
-  --background-btn: #edf1ff;
-  --clr-btn: #151619;
-  --sec-clr: #fffbed;
-}
 .Suggest_followers {
   width: fit-content;
-  border: 1px solid white;
   height: fit-content;
-  background-color: #1e1f23;
+  background-color: var(--background-clr-comm);
   margin-top: 50px;
   margin-right: 25px;
   border-radius: 8px;
@@ -17,10 +11,10 @@
   font-weight: 400;
   padding: 15px 15px;
   text-align: center;
-  color: var(--sec-clr);
+  color: var(--font-clr-common);
 }
 .Suggest_followers ul {
-  color: var(--background-btn);
+  color: var(--font-clr-common);
   padding: 15px 15px;
   display: flex;
   justify-content: space-between;
@@ -28,7 +22,7 @@
 }
 .Suggest_followers ul span {
   font-size: 12px;
-  color: #ffffff;
+  color: var(--font-clr-common);
 }
 .Suggest_followers ul button {
   border: 0;
@@ -36,14 +30,19 @@
   border-radius: 10px;
   height: fit-content;
   padding: 5px 15px;
-  background-color: var(--background-btn);
-  color: var(--clr-btn);
+  color: var(--background-clr-comm);
+  background-color: var(--font-clr-common);
   font-size: 15px;
   font-size: 500;
 }
 .UserProfile {
   display: flex;
   font-size: 18px;
+  background-color: var(--background-clr-comm);
+  padding: 10px 0px;
+  padding-left: 18px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 .UserProfile:hover {
   cursor: pointer;
@@ -55,5 +54,8 @@
   margin-right: 15px;
 }
 .UserProfile p {
-  color: #edf1ff;
+  color: var(--font-clr-common);
+}
+.loggedIn__username {
+  font-weight: 300;
 }
