@@ -9,6 +9,7 @@ export function Suggested() {
   const { setFollowers, setUnFollowers } = useContext(FollowContext);
   const { followersExist } = useContext(UsersContext);
   const nav = useNavigate();
+  const suggestdUsers=Users.filter((val)=>val._id!==loggedInUser._id)
   return (
     <div>
       <section>
@@ -26,8 +27,10 @@ export function Suggested() {
         </div>
         <div className="Suggest_followers">
           <h1>Suggested Users</h1>
-          {Users.map((val) => (
+          {suggestdUsers.map((val) => (
+            
             <ul key={val._id}>
+            
               <p>
                 <li>{val.firstName}</li>
                 <span>{val.username}</span>
