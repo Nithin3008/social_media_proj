@@ -2,20 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap");
 * {
   margin: 0;
-  /* padding: 0; */
   box-sizing: border-box;
-}
-:root {
-  --font-primary: #edf1ff;
-  --font-clr: #fa005a;
-  --font-spanClr: #fb327a;
-  --yellow-clr: #ffc500;
-  --font-secondary: #00c7ff;
 }
 
 .ProfileSec {
   display: flex;
-  background-color: #17181c;
+  background-color: var(--background-color-common);
   min-height: 100vh;
 }
 
@@ -44,31 +36,31 @@
 .details_name {
   font-size: 25px;
   font-weight: 400;
-  color: var(--font-primary);
+  color: var(--font-clr-common);
   padding: 5px 5px;
 }
 .details_bio {
   font-size: 16px;
   font-weight: 400;
-  color: var(--font-primary);
+  color: var(--font-clr-common);
   padding: 5px 5px;
 }
 .details_portfolio span {
   font-size: 16px;
   text-decoration: none;
-  color: var(--font-primary);
+  color: var(--font-clr-common);
   padding: 0px 5px;
 }
 .details_portfolio a {
   font-size: 16px;
   text-decoration: none;
-  color: var(--font-clr);
+  color: var(--link-tag);
   font-weight: 300;
   padding: 0px 5px;
 }
 .details_otherData {
   font-size: 16px;
-  color: var(--font-primary);
+  color: var( --font-clr-common);
   padding: 5px 5px;
 }
 .ProfileSec_about_details--buttons {
@@ -78,8 +70,8 @@
 }
 .ProfileSec_about_details--buttons button {
   font-size: 18px;
-  color: #1e1f23;
-  background-color: var(--font-primary);
+  color: var(--background-clr-comm);
+  background-color: var( --font-clr-common);
   padding: 5px 5px;
   border: 0;
   margin-left: 2px;
@@ -88,12 +80,13 @@
 .ProfileSec__postsSection__posts-fName {
   font-size: 20px;
   font-weight: 400;
-  color: var(--font-secondary);
+  color: var(--font-clr--posts);
   padding: 0px 10px;
 }
 .ProfileSec__postsSection__posts-fName span {
   font-size: 15px;
-  color: #99e8ff;
+  font-weight: 300;
+  color: var(--font-clr--posts);
 }
 
 .ProfileSec__postsSection__posts {
@@ -101,14 +94,13 @@
   flex-direction: column;
   align-items: flex-start;
   border-radius: 10px;
-  background-color: #1e1f23;
+  background-color: var(--background-clr-comm);
   width: 700px;
   margin: auto;
   margin-top: 25px;
   text-align: center;
   padding: 20px 0px;
   padding-left: 50px;
-  border: 0.1px solid white;
 }
 .ProfileSec__postsSection__posts img {
   height: 300px;
@@ -117,9 +109,9 @@
   padding: 10px 10px;
 }
 .ProfileSec__postsSection__posts-Content {
-  color: var(--font-secondary);
+  color: var(--font-clr--posts);
   padding: 10px 10px;
-  font-weight: 600;
+  font-weight: 350;
 }
 .ProfileSec__postsSection__posts-button {
   display: flex;
@@ -141,14 +133,13 @@
   height: 300px;
   margin: auto;
   margin-top: 10%;
-  background-color: #1e1f23;
+  background-color: var(--background-color-common);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 1px solid white;
-  color: var(--font-primary);
+  color: var(--font-clr-common);
   padding: 10px 10px;
 }
 
@@ -163,13 +154,15 @@
 .editSection__details-info input {
   outline: 0;
   border: 0;
-  border-bottom: 1px solid var(--font-primary);
-  background-color: #1e1f23;
+  border-bottom: 1px solid var(--font-clr-common);
+  background-color: var(--background-clr-comm);
   color: var(--font-primary);
   font-size: 16px;
+  padding: 10px 10px;
 }
 button {
-  background-color: var(--font-primary);
+  background-color: var(--font-clr-common);
+  color: var(--background-clr-comm);
   font-size: 16px;
   margin: 10px 10px;
   border: 0;
