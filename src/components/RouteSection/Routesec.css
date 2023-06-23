@@ -1,12 +1,9 @@
-:root {
-  --primary-clr: #f2edff;
-  --background-clr:#1e1f23
-}
+
 .RouteSec {
   width: 300px;
   height: 100%;
-  background-color: var(--background-clr);
-  border-right: 1px solid white;
+  background-color: var(--background-clr-comm);
+
 }
 .RouteSec li {
   list-style: none;
@@ -14,20 +11,20 @@
 .RouteSec_pages {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-clr);
+  background-color: var(--background-clr-comm);
   align-items: center;
 }
 .RouteSec_pages h1 {
   font-size: 25px;
   font-weight: 400;
-  color: var(--primary-clr);
+  color: var(  --font-clr-common);
   font-family: Noto Sans, sans-serif;
   margin-top: 30px;
   padding: 15px 15px;
 }
 .RouteSec_pages-navLinks {
   text-decoration: none;
-  color: var(--primary-clr);
+  color: var(  --font-clr-common);
   font-size: 20px;
   padding: 10px 10px;
 }
