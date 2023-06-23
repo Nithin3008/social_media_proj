@@ -5,8 +5,6 @@ export const MainContext = createContext();
 export function ReducerProv({ children }) {
   useEffect(() => {
     const intialData = async () => {
-   // const resUsers = await axios.get("/api/users");
-      // dispatcherMain({ type: "getUsers", payload: resUsers.data.users });
       const response = await axios.get(`/api/posts`);
       dispatcherMain({ type: "getPosts", payload: response.data.posts });
     };
