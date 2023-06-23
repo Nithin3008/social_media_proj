@@ -19,7 +19,6 @@ export function Bookmark1() {
   const PostsData = Posts.filter((bookPosts) =>
     BookMarks.includes(bookPosts._id)
   );
-  console.log(PostsData, BookMarks, checkBookMarks());
   return (
     <>
       <section className="bookmark">
