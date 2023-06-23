@@ -237,9 +237,7 @@ export function PostsProvider({ children }) {
 
        
         }
-        // let book = response.data.bookmarks;
-        // const bookMarkedPosts = Posts.filter((post) => book.includes(post._id));
-        dispatcherMain({
+          dispatcherMain({
           type: "AddBookmarks",
           payload: response.data.bookmarks,
         });
@@ -269,11 +267,9 @@ export function PostsProvider({ children }) {
             position:"bottom-right"})
           
         }
-        let book = response.data.bookmarks;
-        const bookMarkedPosts = Posts.filter((post) => book.includes(post._id));
         dispatcherMain({
           type: "AddBookmarks",
-          payload:bookMarkedPosts ,
+          payload:response.data.bookmarks ,
         });
       } catch (error) {
         console.log(error);
