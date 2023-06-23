@@ -2,19 +2,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap");
 * {
   margin: 0;
-  /* padding: 0; */
   box-sizing: border-box;
 }
 :root {
-  --font-clr: #fa005a;
-  --font-spanClr: #fb327a;
-  --yellow-clr: #ffc500;
-  --font-secondary: #00c7ff;
+  --font-clr-common: #edf1ff;
+  --font-clr--posts:#ffff;
+  --background-clr-comm:#16181c;
+  --background-color-common: #000000;
+  --background-clr-sign:#8b3f52;
+  --font-clr-sign:#00AE95;
+  --background--input-sign:#f5f1fa;
+  --background--btn-sign:#b2fdf3;
+  --font-btn-sign:#009681;
+  --input--clr-sign:#BE9BF3;
+  --link-tag:#fa005a;
+  --backgroundClr-login:#000103;
+  --fontClr-login:#00c7ff;
+  --inputClr--background:#013741;
 }
 
 .home {
   display: flex;
-  background-color: #17181c;
+  background-color: var(--background-color-common);
   min-height: 100vh;
 }
 .home li {
@@ -32,25 +41,29 @@
   flex-direction: column;
   align-items: center;
   margin: auto;
-  background-color: #1e1f23;
+  background-color: var(--background-clr-comm);
   display: flex;
   flex-direction: column;
-  border: 1px solid white;
-  border-radius: 5px;
+
 }
 .home_postsSection-newPost textarea {
   outline: 0;
   border: 0;
-  background-color: var(--font-primary);
+  color: var(--font-clr-common);
+  background-color: var(--background-clr-comm);
+  border: 0.1px solid var(--font-clr-common);
 }
 .home_postsSection-newPost label {
-  color: var(--font-primary);
+  color: var(--font-clr-common);
+}
+.home_postsSection-newPost button {
+  color: var(--background-color-common);
+  background-color: var(--font-clr-common);
 }
 .home_postsSection-filters button {
-  border: 1px solid white;
-  background-color: #1e1f23;
+  background-color:var(--background-clr-comm);
   font-size: 22px;
-  color: white;
+  color: var(--font-clr-common);
   margin: 10px 25px;
   font-weight: 600;
   font-family: Noto Sans, sans-serif;
@@ -63,14 +76,14 @@
   align-items: flex-start;
   border-radius: 10px;
   margin-top: 50px;
-  background-color: #1e1f23;
+  background-color: var(--background-clr-comm);
   width: 700px;
   margin: auto;
   margin-top: 25px;
   text-align: center;
   padding: 20px 0px;
   padding-left: 50px;
-  border: 0.1px solid white;
+
 }
 .home__postsSection__posts img {
   height: 300px;
@@ -81,8 +94,8 @@
 
 .home__postsSection__posts-fName {
   font-size: 25px;
-  font-weight: 600;
-  color: #2196f3;
+  font-weight: 400;
+  color: var(--font-clr--posts);
   font-family: "Noto Sans", sans-serif;
   padding: 10px 10px;
   display: flex;
@@ -96,64 +109,61 @@
 }
 .home__postsSection__posts-fName span {
   font-size: 15px;
-  font-weight: 400;
-  color: #90caf9;
+  font-weight: 300;
+  color: var(--font-clr-common);
 }
 .home__postsSection__posts-Content {
-  color: #2196f3;
+  color: var(--font-clr--posts);
   padding: 10px 10px;
-  font-weight: 600;
+  font-weight: 350;
 }
 .home__postsSection__posts-button {
   display: flex;
   align-items: center;
   padding: 10px 10px;
-  color: white;
+  color: var(--font-clr--posts);
 }
 .home__postsSection__posts-button svg {
   margin: 0px 13px;
 }
-.home__postsSection__posts-fName select {
-  outline: 0;
-  border: 0;
-  width: 18px;
-  margin-left: 350px;
-  background-color: #1e1f23;
-  color: #fa005a;
-}
+
 .editSectionPost {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none; 
+  position: fixed;
+  z-index: 1; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100%; 
+  height: 100%; 
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); 
+  background-color: rgba(0, 0, 0, 0.4); 
 }
 .editSectionPost-details {
   width: 400px;
   height: 300px;
   margin: auto;
   margin-top: 10%;
-  background-color: #1e1f23;
+  background-color: var(--background-clr-comm);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 1px solid white;
-  color: var(--font-primary);
+  color: var(--font-clr-common);
   padding: 10px 10px;
 }
 
 .editSectionPost-details input {
   outline: 0;
   border: 0;
-  border-bottom: 1px solid var(--font-primary);
-  background-color: #1e1f23;
-  color: var(--font-primary);
+  border-bottom: 1px solid var(--font-clr-common);
+  background-color: var(--background-clr-comm);
+  color: var(--font-clr--posts);
   font-size: 16px;
+}
+.editSectionPost-details button
+{
+  background-color: var(--font-clr-common);
+  color: var(--background-clr-comm);
 }
