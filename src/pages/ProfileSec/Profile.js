@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { RouteSec } from "../../components/RouteSection/RouteSec";
 import { MainContext } from "../../Services/Context/MainReducer";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import "./profile.css";
 import { Suggested } from "../../components/suggestion/SuggestionSec";
 import { PostsContext } from "../../Services/HelperFunc/PostFunc";
@@ -15,7 +15,6 @@ export function Profile1() {
   const { setFollowers, setUnFollowers } = useContext(FollowContext);
   const { editUsers } = useContext(UsersContext);
   const { followersExist } = useContext(UsersContext);
-  const profileData =Users.find((val) => val.username === ProfileId);
   const postsData = Posts.filter((val) => val.username === ProfileId);
   const {
     likePosts,
@@ -25,10 +24,19 @@ export function Profile1() {
     checkBookMarks,
     removeBookmark,
   } = useContext(PostsContext);
+  let user=Users.find((val) => val.username === ProfileId);
+  const [profileData,setProfile]=useState(user)
+  const [inputValue, setInput] = useState(user?.bio);
+  const [portfolioValue, setPortfolio] = useState(user?.portfolio);
+  useEffect(()=>
+  {
+    setProfile(user)
+    setInput(user.bio)
+    setPortfolio(user.portfolio)
+  },[ProfileId])
   const [edit, showEdit] = useState(true);
   const nav = useNavigate();
-  const [inputValue, setInput] = useState(profileData?.bio);
-  const [portfolioValue, setPortfolio] = useState(profileData?.portfolio);
+ 
   const [img1, setImg] = useState({});
   function sendData() {
     const x = {
@@ -37,11 +45,10 @@ export function Profile1() {
       portfolio: portfolioValue,
       img: img1,
     };
-    console.log(x);
     editUsers(x);
     showEdit(!edit);
   }
-  console.log(ProfileId,profileData,inputValue,portfolioValue)
+  console.log(user,profileData,inputValue,portfolioValue)
   return (
     <>
       <section className="ProfileSec">
