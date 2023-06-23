@@ -33,11 +33,13 @@
 }
 
 .bookmark__postsSection__posts-fName {
+  display: flex;
   font-size: 25px;
   font-weight: 400;
   color: var(--font-clr--posts);
   font-family: "Noto Sans", sans-serif;
   padding: 10px 10px;
+  align-items: center;
 }
 .bookmark__postsSection__posts-fName span {
   font-size: 15px;
@@ -57,4 +59,9 @@
 }
 .bookmark__postsSection__posts-button svg {
   margin: 0px 13px;
+}
+.bookmark__postsSection__posts-fName img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
 }
