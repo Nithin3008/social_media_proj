@@ -118,7 +118,7 @@ export function Home1() {
                  <p>{val.firstName}</p>  
                 <span>{val.username}</span>
                  </p>
-                <p style={{display:val.username===loggedInUser?"block":"none",marginLeft: "150px" }} className="dotsForFunc" >
+                <p style={{display:val.username===loggedInUser.username?"block":"none",marginLeft: "150px" }} className="dotsForFunc" >
                   <svg
                     onClick={() =>
                       showEdit === val._id
