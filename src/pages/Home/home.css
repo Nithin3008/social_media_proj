@@ -25,6 +25,7 @@
   display: flex;
   background-color: var(--background-color-common);
   min-height: 100vh;
+  justify-content: space-between;
 }
 .home li {
   list-style: none;
