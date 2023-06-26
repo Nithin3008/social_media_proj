@@ -19,11 +19,15 @@ export function Bookmark1() {
   const PostsData = Posts.filter((bookPosts) =>
     BookMarks.includes(bookPosts._id)
   );
+  console.log(BookMarks.length===0)
   return (
     <>
       <section className="bookmark">
+      <section className="leftPane">
         <RouteSec></RouteSec>
+        </section>
         <div className="bookmark_postsSection">
+          {BookMarks.length==0?<h1>Bookmarks is Empty</h1>:""}
           {PostsData.map((val) => (
             <ul key={val._id} className="bookmark__postsSection__posts">
               <li className="bookmark__postsSection__posts-fName">
@@ -81,7 +85,9 @@ export function Bookmark1() {
             </ul>
           ))}
         </div>
+        <section className="rightPane">
         <Suggested></Suggested>
+        </section>
       </section>
     </>
   );

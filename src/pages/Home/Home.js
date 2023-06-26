@@ -54,7 +54,10 @@ export function Home1() {
   return (
     <div>
       <section className="home">
+        <section className="leftPane">
         <RouteSec></RouteSec>
+        </section>
+        
         <div
           style={{ display: show ? "block" : "none" }}
           className="editSectionPost"
@@ -212,7 +215,9 @@ export function Home1() {
             </ul>
           ))}
         </div>
+        <section className="rightPane">
         <Suggested></Suggested>
+        </section>
       </section>
     </div>
   );

@@ -3,6 +3,11 @@
   background-color: var(--background-color-common);
   min-height: 100vh;
 }
+h1{
+  color: white;
+  font-size: 35px;
+  font-weight: 500;
+}
 .bookmark li {
   list-style: none;
 }

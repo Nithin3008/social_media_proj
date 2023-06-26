@@ -23,7 +23,9 @@ export function Explore1() {
   return (
     <div>
       <section className="Explore">
+      <section className="leftPane">
         <RouteSec></RouteSec>
+        </section>
         <div className="Explore_postsSection">
           {PostsData.map((val) => (
             <ul key={val._id} className="Explore__postsSection__posts">
@@ -95,7 +97,9 @@ export function Explore1() {
             </ul>
           ))}
         </div>
+        <section className="rightPane">
         <Suggested></Suggested>
+        </section>
       </section>
     </div>
   );
