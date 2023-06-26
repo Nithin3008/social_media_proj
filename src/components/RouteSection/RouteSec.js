@@ -4,11 +4,9 @@ import { NavLink } from "react-router-dom";
 import { PostsContext } from "../../Services/HelperFunc/PostFunc";
 import { AuthContext } from "../../Services/HelperFunc/AuthFunc";
 export function RouteSec() {
-  const { intialBookMarks } = useContext(PostsContext);
   const { logoutFun } = useContext(AuthContext);
   return (
-    <div>
-      <section className="RouteSec">
+   
         <div className="RouteSec_pages">
           <h1>AnimeVerse</h1>
           <NavLink className="RouteSec_pages-navLinks" to={"/Home1"}>
@@ -71,7 +69,5 @@ export function RouteSec() {
             Logout
           </button>
         </div>
-      </section>
-    </div>
   );
 }
