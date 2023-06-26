@@ -11,7 +11,6 @@ export function Suggested() {
   const nav = useNavigate();
   const suggestdUsers=Users.filter((val)=>val._id!==loggedInUser._id)
   return (
-    <div>
       <section>
         <div
           className="UserProfile"
@@ -49,6 +48,5 @@ export function Suggested() {
           ))}
         </div>
       </section>
-    </div>
   );
 }
