@@ -5,11 +5,16 @@ import { PostsContext } from "../../Services/HelperFunc/PostFunc";
 import { AuthContext } from "../../Services/HelperFunc/AuthFunc";
 export function RouteSec() {
   const { logoutFun } = useContext(AuthContext);
+  const setActiveStyle=({isActive})=>
+  ({
+      backgroundColor:isActive?"#000000":"",
+      borderRadius:isActive?"30px":""
+  })
   return (
    
         <div className="RouteSec_pages">
           <h1>AnimeVerse</h1>
-          <NavLink className="RouteSec_pages-navLinks" to={"/Home1"}>
+          <NavLink style={setActiveStyle} className="RouteSec_pages-navLinks" to={"/Home1"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"

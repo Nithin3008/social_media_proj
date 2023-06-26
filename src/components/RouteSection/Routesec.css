@@ -21,4 +21,10 @@
   color: var(  --font-clr-common);
   font-size: 20px;
   padding: 10px 10px;
+  display: flex;
+  align-items: center;
+}
+.RouteSec_pages-navLinks  svg
+{
+  margin-right: 1px;
 }
