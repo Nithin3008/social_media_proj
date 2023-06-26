@@ -31,7 +31,7 @@ export function RouteSec() {
             </svg>
             Home
           </NavLink>
-          <NavLink className="RouteSec_pages-navLinks" to="/Explore1">
+          <NavLink style={setActiveStyle} className="RouteSec_pages-navLinks" to="/Explore1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -51,6 +51,7 @@ export function RouteSec() {
           <NavLink
             className="RouteSec_pages-navLinks"
             to={"/Bookmark1"}
+            style={setActiveStyle}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
