@@ -14,7 +14,7 @@ export function Profile1() {
   const { ProfileId } = useParams();
   const { Users, Posts, loggedInUser } = useContext(MainContext);
   const { setFollowers, setUnFollowers } = useContext(FollowContext);
-  const { editUsers,dpData } = useContext(UsersContext);
+  const { editUsers, dpData } = useContext(UsersContext);
   const { followersExist } = useContext(UsersContext);
   const postsData = Posts.filter((val) => val.username === ProfileId);
   const {
@@ -25,19 +25,18 @@ export function Profile1() {
     checkBookMarks,
     removeBookmark,
   } = useContext(PostsContext);
-  let user=Users.find((val) => val.username === ProfileId);
-  const [profileData,setProfile]=useState(user)
+  let user = Users.find((val) => val.username === ProfileId);
+  const [profileData, setProfile] = useState(user);
   const [inputValue, setInput] = useState(user?.bio);
   const [portfolioValue, setPortfolio] = useState(user?.portfolio);
-  useEffect(()=>
-  {
-    setProfile(user)
-    setInput(user.bio)
-    setPortfolio(user.portfolio)
-  },[ProfileId])
+  useEffect(() => {
+    setProfile(user);
+    setInput(user.bio);
+    setPortfolio(user.portfolio);
+  }, [ProfileId]);
   const [edit, showEdit] = useState(true);
   const nav = useNavigate();
- 
+
   const [img1, setImg] = useState();
   function sendData() {
     const x = {
@@ -49,21 +48,28 @@ export function Profile1() {
     editUsers(x);
     showEdit(!edit);
   }
-  console.log(img1)
+  console.log(img1);
   return (
     <>
       <section className="ProfileSec">
-        <RouteSec></RouteSec>
+        <section className="leftPane">
+          <RouteSec></RouteSec>
+        </section>
         <div
           className="editSection"
           style={{ display: edit ? "none" : "block" }}
         >
           <div className="editSection__details">
             <div className="editSection__details__avatars">
-                {dpData.map((links)=><img alt="dp" onClick={()=>setImg(links)} src={links}></img>)}
-              </div>
+              {dpData.map((links) => (
+                <img alt="dp" onClick={() => setImg(links)} src={links}></img>
+              ))}
+            </div>
             <label>
-              <img alt="gallerySymbol" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAA1BJREFUSEudVz1v01AUPccRHZCIm8aVEEhQhDpTWBgQamFiBBYkFvoTKiYmmk6wMLAyZSlsCH5B07kDSMBelg7FSZ0MLC2+yM9+znt+z07AQxs9X99zP8491ya8FwGI/5Zx2mhl3vT85nwQU7Spvf2kH6fZpvTqD6I4Vf/qHdWVZ/oYQUhZx+zcuk5O5OoZcK2xzlkXqP54zVqCUaeDb6Qyqm2muiEiwWiC9xA8sf3VAzQFJ4IvZy08uHiBx8pfJYQ8ZAKjRJ4KsKud/RecW4m33ZBbFrDROYU1HMtLADszqVw1MCOsAJOy120H93NquPzQwD0A280Z19fBuSOquvvRIjfyjOcCztiXsdC4fJ4zi7pYCuDlRW5Y7dWl1nEMx5JnXDiap8dTG7+1SJGxmYAFTGCYpD0Bt/WUNALXZV/pvxe4sCmrORynPYBlj50qu4w9ALEAwY26epfAteOUs7onwLZfEhyuJ0GKmwA6KXEASssnJhmw02M3YxPYbrQApwQCAC1FFOJR1Oan7Gc8kVcUeVEHrFitxcIQzHxJqB5LVuaMYLmS2aq4BagMnwHIRUHbiSyMJvgOYNUZ8Qq5qovEM8fTcSLweSnkwySR63+I3aU27pI8zTPMByUey+2AeL0U8l45rzPWnkGuYpzssH8GKdY6HSbZ8dGRnL98ib9zuGLbFADxiTyOOvw4U/ksycxLbSkXgFMB7kQhD6bO7NXmGU8VUDxJN5liRQI5jNpB31Iuj1ZXJfODpHhnj4otzMudYOBmSMRJOiCwXkqmQy6DiuUcz9i1JlAU+hdunMiAxLotIGa1DDm259hZOd7EuyFzD5Vdq4BVxrIfLQbFOJl0NDOeyHMI3swkRzlrgAaOx7KJFJs6CBJrEIQgxiL4qn0yQL/bZj+nZnEdj2U1AH4QOGf4boxDl7pcMKYGOE+qKu50QyqtKN9AsnL9SuRWi9hKBVdmjKFyq1UpnhQZF9JDcg1ACNgZI0A/CtnPsFxpNuje+KbmeYfSRw65qpLlBXZKNE/u9kQPk3QAk9W+7eSczZOxp/OmH/842Q9ZXxLTh/8V3Va0rOcUrAhxGGUs9mRnkWuuUdKUrCVAXTlmfEmUMzfXZ5up4lpHal43KoH+BfKvmjGyXzPUAAAAAElFTkSuQmCC"/>
+              <img
+                alt="gallerySymbol"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAA1BJREFUSEudVz1v01AUPccRHZCIm8aVEEhQhDpTWBgQamFiBBYkFvoTKiYmmk6wMLAyZSlsCH5B07kDSMBelg7FSZ0MLC2+yM9+znt+z07AQxs9X99zP8491ya8FwGI/5Zx2mhl3vT85nwQU7Spvf2kH6fZpvTqD6I4Vf/qHdWVZ/oYQUhZx+zcuk5O5OoZcK2xzlkXqP54zVqCUaeDb6Qyqm2muiEiwWiC9xA8sf3VAzQFJ4IvZy08uHiBx8pfJYQ8ZAKjRJ4KsKud/RecW4m33ZBbFrDROYU1HMtLADszqVw1MCOsAJOy120H93NquPzQwD0A280Z19fBuSOquvvRIjfyjOcCztiXsdC4fJ4zi7pYCuDlRW5Y7dWl1nEMx5JnXDiap8dTG7+1SJGxmYAFTGCYpD0Bt/WUNALXZV/pvxe4sCmrORynPYBlj50qu4w9ALEAwY26epfAteOUs7onwLZfEhyuJ0GKmwA6KXEASssnJhmw02M3YxPYbrQApwQCAC1FFOJR1Oan7Gc8kVcUeVEHrFitxcIQzHxJqB5LVuaMYLmS2aq4BagMnwHIRUHbiSyMJvgOYNUZ8Qq5qovEM8fTcSLweSnkwySR63+I3aU27pI8zTPMByUey+2AeL0U8l45rzPWnkGuYpzssH8GKdY6HSbZ8dGRnL98ib9zuGLbFADxiTyOOvw4U/ksycxLbSkXgFMB7kQhD6bO7NXmGU8VUDxJN5liRQI5jNpB31Iuj1ZXJfODpHhnj4otzMudYOBmSMRJOiCwXkqmQy6DiuUcz9i1JlAU+hdunMiAxLotIGa1DDm259hZOd7EuyFzD5Vdq4BVxrIfLQbFOJl0NDOeyHMI3swkRzlrgAaOx7KJFJs6CBJrEIQgxiL4qn0yQL/bZj+nZnEdj2U1AH4QOGf4boxDl7pcMKYGOE+qKu50QyqtKN9AsnL9SuRWi9hKBVdmjKFyq1UpnhQZF9JDcg1ACNgZI0A/CtnPsFxpNuje+KbmeYfSRw65qpLlBXZKNE/u9kQPk3QAk9W+7eSczZOxp/OmH/842Q9ZXxLTh/8V3Va0rOcUrAhxGGUs9mRnkWuuUdKUrCVAXTlmfEmUMzfXZ5up4lpHal43KoH+BfKvmjGyXzPUAAAAAElFTkSuQmCC"
+              />
               <input
                 type="file"
                 className="editSection__details-input"
@@ -156,7 +162,10 @@ export function Profile1() {
                   ></img>
                 ) : null}
               </li>
-              <li onClick={() => nav(`/PostDetails/${val._id}`)} className="ProfileSec__postsSection__posts-Content">
+              <li
+                onClick={() => nav(`/PostDetails/${val._id}`)}
+                className="ProfileSec__postsSection__posts-Content"
+              >
                 {val.content}
               </li>
               <li className="ProfileSec__postsSection__posts-button">
@@ -216,7 +225,9 @@ export function Profile1() {
             </ul>
           ))}
         </div>
-        <Suggested></Suggested>
+        <section className="rightPane">
+          <Suggested></Suggested>
+        </section>
       </section>
     </>
   );
