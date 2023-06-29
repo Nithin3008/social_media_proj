@@ -1,24 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap");
 * {
   margin: 0;
   box-sizing: border-box;
-}
-:root {
-  --font-clr-common: #edf1ff;
-  --font-clr--posts: #ffff;
-  --background-clr-comm: #16181c;
-  --background-color-common: #000000;
-  --background-clr-sign: #8b3f52;
-  --font-clr-sign: #00ae95;
-  --background--input-sign: #f5f1fa;
-  --background--btn-sign: #b2fdf3;
-  --font-btn-sign: #009681;
-  --input--clr-sign: #be9bf3;
-  --link-tag: #fa005a;
-  --backgroundClr-login: #000103;
-  --fontClr-login: #00c7ff;
-  --inputClr--background: #013741;
 }
 
 .home {
@@ -80,7 +62,6 @@
   color: var(--font-clr-common);
   margin: 10px 25px;
   font-weight: 600;
-  font-family: Noto Sans, sans-serif;
   padding: 10px 10px;
   border-radius: 8px;
 }
@@ -109,7 +90,6 @@
   font-size: 25px;
   font-weight: 400;
   color: var(--font-clr--posts);
-  font-family: "Noto Sans", sans-serif;
   padding: 10px 10px;
   display: flex;
   align-items: center;
