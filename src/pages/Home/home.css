@@ -6,19 +6,19 @@
 }
 :root {
   --font-clr-common: #edf1ff;
-  --font-clr--posts:#ffff;
-  --background-clr-comm:#16181c;
+  --font-clr--posts: #ffff;
+  --background-clr-comm: #16181c;
   --background-color-common: #000000;
-  --background-clr-sign:#8b3f52;
-  --font-clr-sign:#00AE95;
-  --background--input-sign:#f5f1fa;
-  --background--btn-sign:#b2fdf3;
-  --font-btn-sign:#009681;
-  --input--clr-sign:#BE9BF3;
-  --link-tag:#fa005a;
-  --backgroundClr-login:#000103;
-  --fontClr-login:#00c7ff;
-  --inputClr--background:#013741;
+  --background-clr-sign: #8b3f52;
+  --font-clr-sign: #00ae95;
+  --background--input-sign: #f5f1fa;
+  --background--btn-sign: #b2fdf3;
+  --font-btn-sign: #009681;
+  --input--clr-sign: #be9bf3;
+  --link-tag: #fa005a;
+  --backgroundClr-login: #000103;
+  --fontClr-login: #00c7ff;
+  --inputClr--background: #013741;
 }
 
 .home {
@@ -27,8 +27,7 @@
   min-height: 100vh;
   justify-content: space-between;
 }
-.leftPane
-{
+.leftPane {
   flex: 0.3;
   height: 100vh;
   background-color: var(--background-clr-comm);
@@ -36,8 +35,7 @@
   top: 0;
   bottom: 0;
 }
-.rightPane
-{
+.rightPane {
   height: 100vh;
   position: sticky;
   top: 0;
@@ -45,6 +43,7 @@
 }
 .home li {
   list-style: none;
+  overflow: hidden;
 }
 
 .home_postsSection {
@@ -53,13 +52,13 @@
 }
 .home_postsSection-newPost {
   width: 700px;
-  /* background-color: white; */
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
+  padding: 18px 10px;
+  margin-top: 20px;
   background-color: var(--background-clr-comm);
-
 }
 .home_postsSection-newPost textarea {
   outline: 0;
@@ -76,7 +75,7 @@
   background-color: var(--font-clr-common);
 }
 .home_postsSection-filters button {
-  background-color:var(--background-clr-comm);
+  background-color: var(--background-clr-comm);
   font-size: 22px;
   color: var(--font-clr-common);
   margin: 10px 25px;
@@ -98,7 +97,6 @@
   text-align: center;
   padding: 20px 0px;
   padding-left: 50px;
-
 }
 .home__postsSection__posts img {
   height: 300px;
@@ -144,16 +142,16 @@
 }
 
 .editSectionPost {
-  display: none; 
+  display: none;
   position: fixed;
-  z-index: 1; 
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); 
-  background-color: rgba(0, 0, 0, 0.4); 
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .editSectionPost-details {
   width: 400px;
@@ -178,8 +176,7 @@
   color: var(--font-clr--posts);
   font-size: 16px;
 }
-.editSectionPost-details button
-{
+.editSectionPost-details button {
   background-color: var(--font-clr-common);
   color: var(--background-clr-comm);
 }
