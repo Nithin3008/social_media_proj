@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap");
+:root {
+  --font-clr-common: #edf1ff;
+  --font-clr--posts: #ffff;
+  --background-clr-comm: #16181c;
+  --background-color-common: #000000;
+  --background-clr-sign: #8b3f52;
+  --font-clr-sign: #00ae95;
+  --background--input-sign: #f5f1fa;
+  --background--btn-sign: #b2fdf3;
+  --font-btn-sign: #009681;
+  --input--clr-sign: #be9bf3;
+  --link-tag: #fa005a;
+  --backgroundClr-login: #000103;
+  --fontClr-login: #00c7ff;
+  --inputClr--background: #013741;
+}
+* {
+  font-family: "Lato", sans-serif;
+  font-family: "Noto Sans", sans-serif;
+}
