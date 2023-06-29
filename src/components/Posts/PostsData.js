@@ -5,7 +5,7 @@ import { UsersContext } from "../../Services/HelperFunc/UsersFunc";
 import { useNavigate } from "react-router";
 import { PostsContext } from "../../Services/HelperFunc/PostFunc";
 export const PostsTotalData = ({ posts }) => {
-  const { loggedInUser, Posts } = useContext(MainContext);
+  const { loggedInUser } = useContext(MainContext);
   const { userAvatars } = useContext(UsersContext);
   const {
     likePosts,
@@ -14,7 +14,6 @@ export const PostsTotalData = ({ posts }) => {
     addBookmark,
     checkBookMarks,
     removeBookmark,
-    uploadNewPost,
     editPost,
     deletePost,
   } = useContext(PostsContext);
