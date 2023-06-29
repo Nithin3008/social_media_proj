@@ -1,8 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap");
 * {
   margin: 0;
-  font-family: "Noto Sans", sans-serif;
 }
 
 .login {
@@ -10,7 +7,7 @@
   height: 100vh;
   flex-direction: row;
   overflow: hidden;
-  background-color:var(--backgroundClr-login) ;
+  background-color: var(--backgroundClr-login);
 }
 
 .login__enterDetails {
@@ -25,13 +22,12 @@
 .login__enterDetails h1 {
   font-size: 48px;
   font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
   color: var(--fontClr-login);
 }
 .login__enterDetails input {
   outline: 0;
   border: 0;
-  background-color:var( --inputClr--background); 
+  background-color: var(--inputClr--background);
   border-radius: 10px;
   height: 40px;
   padding: 5px;
@@ -45,27 +41,26 @@
   padding: 10px 10px;
 }
 .login__enterDetails button {
-  background-color: var( --fontClr-login);
+  background-color: var(--fontClr-login);
   border: 0;
   padding: 10px 10px;
   border-radius: 10px;
   color: var(--font-clr--posts);
   font-size: 20px;
   font-weight: 400;
-  font-family: "Noto Sans", sans-serif;
   margin-top: 15px;
   margin-left: 15px;
   cursor: pointer;
 }
 .login__enterDetails button:hover {
   cursor: pointer;
-  background-color:var(--font-clr--posts);
+  background-color: var(--font-clr--posts);
   color: var(--fontClr-login);
 }
 .login__enterDetails--signup {
   margin-top: 10px;
 }
-.signupLink{
+.signupLink {
   text-decoration: none;
   color: #ff6d00;
 }
