@@ -17,21 +17,31 @@ export function PostDetails() {
   } = useContext(PostsContext);
   const { postId } = useParams();
   const PostsData = [...Posts].find((val) => val._id === postId);
-  console.log(PostsData);
+  console.log(PostsData.img.length);
   return (
     <>
       <section className="PostDetails">
-        <RouteSec></RouteSec>
+        <section className="leftPane">
+          <RouteSec></RouteSec>
+        </section>
         <div className="PostDetails_postsSection">
           <ul className="PostDetails__postsSection__posts">
             <li className="PostDetails__postsSection__posts-fName">
-            <p style={{display:"flex",flexDirection:"column",alignItems:"flex-start"}}>
-                 <p>{PostsData.firstName}</p>  
+              <p
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                }}
+              >
+                <p>{PostsData.firstName}</p>
                 <span>{PostsData.username}</span>
-                 </p>
+              </p>
             </li>
             <li>
-                {PostDetails.img?(<img src={PostsData.img}></img>):null} 
+              {PostsData.img.length !== 0 ? (
+                <img src={PostsData.img}></img>
+              ) : null}
             </li>
             <li className="PostDetails__postsSection__posts-Content">
               {PostsData.content}
@@ -83,7 +93,9 @@ export function PostDetails() {
             </li>
           </ul>
         </div>
-        <Suggested></Suggested>
+        <section className="rightPane">
+          <Suggested></Suggested>
+        </section>
       </section>
     </>
   );
