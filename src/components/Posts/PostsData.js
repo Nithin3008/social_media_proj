@@ -1,11 +1,11 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MainContext } from "../../Services/Context/MainReducer";
 import { UsersContext } from "../../Services/HelperFunc/UsersFunc";
 import { useNavigate } from "react-router";
 import { PostsContext } from "../../Services/HelperFunc/PostFunc";
-export const PostsData = ({ PostsData }) => {
-  const { loggedInUser } = useContext(MainContext);
+export const PostsTotalData = ({ posts }) => {
+  const { loggedInUser, Posts } = useContext(MainContext);
   const { userAvatars } = useContext(UsersContext);
   const {
     likePosts,
@@ -17,10 +17,20 @@ export const PostsData = ({ PostsData }) => {
     uploadNewPost,
     editPost,
     deletePost,
-    sortByDate,
-    Trending,
   } = useContext(PostsContext);
   const nav = useNavigate();
+  const [show, setShow] = useState(false);
+  const [editObject, setObject] = useState({});
+  const [editDetails, setDetails] = useState();
+  const [editImage, setImage] = useState();
+  const [showEdit, setShowEdit] = useState("");
+  function sendEditPost() {
+    const x = { ...editObject, img: editImage, content: editDetails };
+    editPost(x);
+    setShow(!show);
+  }
+  const PostsData = posts;
+  console.log(PostsData);
   return (
     <>
       <div
