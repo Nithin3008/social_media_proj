@@ -1,4 +1,3 @@
-
 .RouteSec_pages {
   list-style: none;
 }
@@ -11,20 +10,18 @@
 .RouteSec_pages h1 {
   font-size: 25px;
   font-weight: 400;
-  color: var(  --font-clr-common);
-  font-family: Noto Sans, sans-serif;
+  color: var(--font-clr-common);
   margin-top: 30px;
   padding: 15px 15px;
 }
 .RouteSec_pages-navLinks {
   text-decoration: none;
-  color: var(  --font-clr-common);
+  color: var(--font-clr-common);
   font-size: 20px;
   padding: 10px 10px;
   display: flex;
   align-items: center;
 }
-.RouteSec_pages-navLinks  svg
-{
+.RouteSec_pages-navLinks svg {
   margin-right: 1px;
 }
