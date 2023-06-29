@@ -19,23 +19,32 @@ export function Bookmark1() {
   const PostsData = Posts.filter((bookPosts) =>
     BookMarks.includes(bookPosts._id)
   );
-  console.log(BookMarks.length===0)
   return (
     <>
       <section className="bookmark">
-      <section className="leftPane">
-        <RouteSec></RouteSec>
+        <section className="leftPane">
+          <RouteSec></RouteSec>
         </section>
         <div className="bookmark_postsSection">
-          {BookMarks.length==0?<h1>Bookmarks is Empty</h1>:""}
+          {BookMarks.length == 0 ? (
+            <h1 className="bookMarkHeading">Bookmarks is Empty</h1>
+          ) : (
+            ""
+          )}
           {PostsData.map((val) => (
             <ul key={val._id} className="bookmark__postsSection__posts">
               <li className="bookmark__postsSection__posts-fName">
                 <img alt="profilePic" src={userAvatars(val.username)}></img>
-                <p style={{display:"flex",flexDirection:"column",alignItems:"flex-start"}}>
-                     <p>{val.firstName}</p>  
-                     <span>{val.username}</span>
-                 </p>
+                <p
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <p>{val.firstName}</p>
+                  <span>{val.username}</span>
+                </p>
               </li>
               <li>{val.img ? <img src={val.img}></img> : null}</li>
               <li className="bookmark__postsSection__posts-Content">
@@ -86,7 +95,7 @@ export function Bookmark1() {
           ))}
         </div>
         <section className="rightPane">
-        <Suggested></Suggested>
+          <Suggested></Suggested>
         </section>
       </section>
     </>
