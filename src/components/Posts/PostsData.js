@@ -4,6 +4,7 @@ import { MainContext } from "../../Services/Context/MainReducer";
 import { UsersContext } from "../../Services/HelperFunc/UsersFunc";
 import { useNavigate } from "react-router";
 import { PostsContext } from "../../Services/HelperFunc/PostFunc";
+import "./postdata.css";
 export const PostsTotalData = ({ posts }) => {
   const { loggedInUser } = useContext(MainContext);
   const { userAvatars } = useContext(UsersContext);
@@ -21,7 +22,7 @@ export const PostsTotalData = ({ posts }) => {
   const [show, setShow] = useState(false);
   const [editObject, setObject] = useState({});
   const [editDetails, setDetails] = useState();
-  const [editImage, setImage] = useState();
+  const [editImage, setImage] = useState("");
   const [showEdit, setShowEdit] = useState("");
   function sendEditPost() {
     const x = { ...editObject, img: editImage, content: editDetails };
@@ -38,12 +39,20 @@ export const PostsTotalData = ({ posts }) => {
       >
         <div className="editSectionPost-details">
           <h1>Edit Post</h1>
-          <input
+          <textarea
             type="text"
             onChange={(e) => setDetails(e.target.value)}
             value={editDetails}
-          ></input>
-          <button onClick={() => setImage(null)}>Remove Existing Image</button>
+          ></textarea>
+          <div
+            style={{ display: editImage === "" ? "null" : "block" }}
+            className="editSectionPost-details__img"
+          >
+            <img src={editImage}></img>
+            <br></br>
+            <button onClick={() => setImage(null)}>Remove Image</button>
+          </div>
+
           <label>
             <img
               alt="gallerySymbol"
