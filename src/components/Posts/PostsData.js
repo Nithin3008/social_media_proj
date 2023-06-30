@@ -30,7 +30,6 @@ export const PostsTotalData = ({ posts }) => {
     setShow(!show);
   }
   const PostsData = posts;
-  console.log(PostsData);
   return (
     <>
       <div
@@ -45,7 +44,7 @@ export const PostsTotalData = ({ posts }) => {
             value={editDetails}
           ></textarea>
           <div
-            style={{ display: editImage === "" ? "null" : "block" }}
+            style={{ display: editImage === "" ? "none" : "block" }}
             className="editSectionPost-details__img"
           >
             <img src={editImage}></img>
