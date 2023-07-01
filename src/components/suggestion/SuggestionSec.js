@@ -41,6 +41,7 @@ export function Suggested() {
             </p>
 
             <button
+              style={{ cursor: "pointer" }}
               onClick={() =>
                 followersExist(val._id)
                   ? setUnFollowers(val._id)
