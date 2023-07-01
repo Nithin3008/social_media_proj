@@ -21,7 +21,6 @@ export function Login1() {
     userDetails.pwd = "sensei";
     LoginHandler(userDetails);
   }
-
   return (
     <div>
       <section className="login">
