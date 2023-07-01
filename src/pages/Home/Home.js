@@ -19,6 +19,8 @@ export function Home1() {
   );
   const PostsData = [...postsD, ...postFollow];
   const postDetails = {
+    comment: [],
+    firstName: loggedInUser.firstName,
     img: "",
     content: "",
   };
