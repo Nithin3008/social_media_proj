@@ -80,6 +80,7 @@
   height: 100%;
   width: 100%;
   background-color: rgba(239, 234, 234, 0.4);
+  z-index: 1;
 }
 .editSection__details {
   width: fit-content;
