@@ -131,17 +131,17 @@ export function Profile1() {
               <button
                 style={{
                   display:
-                    profileData.username === loggedInUser.username
-                      ? "none"
-                      : "inline",
+                    profileData.username !== loggedInUser.username
+                      ? "inline"
+                      : "none",
                 }}
                 onClick={() =>
-                  followersExist(profileData.username)
+                  followersExist(profileData._id)
                     ? setUnFollowers(profileData._id)
                     : setFollowers(profileData._id)
                 }
               >
-                {followersExist(profileData.username) ? "unfollow" : "Follow"}
+                {followersExist(profileData._id) ? "unfollow" : "Follow"}
               </button>
             </div>
           </div>
