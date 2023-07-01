@@ -38,10 +38,17 @@
 }
 
 .PostDetails__postsSection__posts-fName {
+  display: flex;
+  align-items: center;
   font-size: 25px;
   font-weight: 400;
   color: var(--font-clr--posts);
   padding: 10px 10px;
+}
+.PostDetails__postsSection__posts-fName img {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
 }
 .PostDetails__postsSection__posts-fName span {
   font-size: 15px;
