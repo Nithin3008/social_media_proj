@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { PostsContext } from "../../Services/HelperFunc/PostFunc";
 import { MainContext } from "../../Services/Context/MainReducer";
 import { useContext } from "react";
+import { UsersContext } from "../../Services/HelperFunc/UsersFunc";
 import "./postdet.css";
 export function PostDetails() {
   const { Posts } = useContext(MainContext);
@@ -16,6 +17,7 @@ export function PostDetails() {
     removeBookmark,
   } = useContext(PostsContext);
   const { postId } = useParams();
+  const { userAvatars } = useContext(UsersContext);
   const PostsData = [...Posts].find((val) => val._id === postId);
   console.log(PostsData.img.length);
   return (
@@ -25,18 +27,22 @@ export function PostDetails() {
           <RouteSec></RouteSec>
         </section>
         <div className="PostDetails_postsSection">
-          <ul className="PostDetails__postsSection__posts">
+          <ul
+            className="PostDetails__postsSection__posts"
+            data-aos={"slide-down"}
+          >
             <li className="PostDetails__postsSection__posts-fName">
-              <p
+              <img src={userAvatars(PostsData.username)} alt="profilePic"></img>
+              <div
                 style={{
                   display: "flex",
+                  alignItems: "start",
                   flexDirection: "column",
-                  alignItems: "flex-start",
                 }}
               >
                 <p>{PostsData.firstName}</p>
                 <span>{PostsData.username}</span>
-              </p>
+              </div>
             </li>
             <li>
               {PostsData.img.length !== 0 ? (

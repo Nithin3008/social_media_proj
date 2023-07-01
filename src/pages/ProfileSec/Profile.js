@@ -87,7 +87,7 @@ export function Profile1() {
           </div>
         </div>
         <div className="ProfileSec_about">
-          <div className="ProfileSec_about_details">
+          <div className="ProfileSec_about_details" data-aos={"slide-down"}>
             <div>
               <img
                 className="ProfileSec_about__dp"

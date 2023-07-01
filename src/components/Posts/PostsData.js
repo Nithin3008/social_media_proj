@@ -5,6 +5,12 @@ import { UsersContext } from "../../Services/HelperFunc/UsersFunc";
 import { useNavigate } from "react-router";
 import { PostsContext } from "../../Services/HelperFunc/PostFunc";
 import "./postdata.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init({
+  duration: 1000,
+  offset: 100,
+});
 export const PostsTotalData = ({ posts }) => {
   const { loggedInUser } = useContext(MainContext);
   const { userAvatars } = useContext(UsersContext);
@@ -71,7 +77,11 @@ export const PostsTotalData = ({ posts }) => {
         </div>
       </div>
       {PostsData.map((val) => (
-        <ul key={val._id} className="home__postsSection__posts">
+        <ul
+          key={val._id}
+          className="home__postsSection__posts"
+          data-aos={"flip-up"}
+        >
           <li className="home__postsSection__posts-fName">
             <img
               onClick={() => nav(`/Profile1/${val.username}`)}
@@ -137,6 +147,7 @@ export const PostsTotalData = ({ posts }) => {
                 src={val.img}
                 onClick={() => nav(`/PostDetails/${val._id}`)}
                 alt="postPic"
+                style={{ cursor: "pointer" }}
               ></img>
             ) : null}
           </li>

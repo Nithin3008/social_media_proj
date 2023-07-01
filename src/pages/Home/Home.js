@@ -36,7 +36,7 @@ export function Home1() {
           <RouteSec></RouteSec>
         </section>
         <div className="home_postsSection">
-          <div className="home_postsSection-newPost">
+          <div className="home_postsSection-newPost" data-aos={"slide-down"}>
             <textarea
               placeholder="What's happening"
               onChange={(e) => (postDetails.content = e.target.value)}
@@ -56,8 +56,12 @@ export function Home1() {
             <button onClick={() => checkValue()}>Post</button>
           </div>
           <div className="home_postsSection-filters">
-            <button onClick={() => Trending()}>Trending🔥🔥</button>
-            <button onClick={() => sortByDate()}>Sort By Date</button>
+            <button onClick={() => Trending()} data-aos={"fade-right"}>
+              Trending🔥🔥
+            </button>
+            <button onClick={() => sortByDate()} data-aos={"fade-left"}>
+              Sort By Date
+            </button>
           </div>
           <PostsTotalData posts={PostsData}></PostsTotalData>
         </div>
