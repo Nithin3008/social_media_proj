@@ -113,14 +113,15 @@
   font-size: 19px;
   margin-top: 5px;
 }
-.editSection__details-info input {
+.editSection__details-info textarea {
   outline: 0;
   border: 0;
-  border-bottom: 1px solid var(--font-clr-common);
+  width: 350px;
   background-color: var(--background-clr-comm);
   color: var(--font-primary);
   font-size: 16px;
   padding: 10px 10px;
+  resize: none;
 }
 button {
   background-color: var(--font-clr-common);

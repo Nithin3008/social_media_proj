@@ -26,7 +26,8 @@ export function Profile1() {
     setProfile(user);
     setInput(user.bio);
     setPortfolio(user.portfolio);
-  }, [ProfileId]);
+    setProfile(user);
+  }, [ProfileId, Users]);
   const [edit, showEdit] = useState(true);
   const [img1, setImg] = useState();
   function sendData() {
@@ -39,6 +40,7 @@ export function Profile1() {
     editUsers(x);
     showEdit(!edit);
   }
+  console.log(profileData, Users);
   return (
     <>
       <section className="ProfileSec">
@@ -68,17 +70,17 @@ export function Profile1() {
             </label>
             <div className="editSection__details-info">
               <p>Bio</p>
-              <input
+              <textarea
                 onChange={(e) => setInput(e.target.value)}
                 value={inputValue}
                 type="text"
-              ></input>
+              ></textarea>
               <p>Portfolio</p>
-              <input
+              <textarea
                 onChange={(e) => setPortfolio(e.target.value)}
                 type="text"
                 value={portfolioValue}
-              ></input>
+              ></textarea>
             </div>
             <div>
               <button onClick={() => sendData()}>Save</button>
@@ -89,10 +91,12 @@ export function Profile1() {
         <div className="ProfileSec_about">
           <div className="ProfileSec_about_details" data-aos={"slide-down"}>
             <div>
-              <img
-                className="ProfileSec_about__dp"
-                src={profileData.avatar}
-              ></img>
+              {profileData.avatar ? (
+                <img
+                  className="ProfileSec_about__dp"
+                  src={profileData.avatar}
+                ></img>
+              ) : null}
             </div>
             <div className="about_details">
               <p className="details_name">
