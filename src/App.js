@@ -9,9 +9,11 @@ import { Bookmark1 } from "./pages/Bookmarks/Bookmark";
 import { Profile1 } from "./pages/ProfileSec/Profile";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ClearToken } from "./Clear";
 function App() {
   return (
     <div className="App">
+      <ClearToken></ClearToken>
       <Routes>
         <Route path="/Home1" element={<Home1 />}></Route>
         <Route path="/" element={<Login1 />}></Route>
