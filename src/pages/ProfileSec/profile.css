@@ -51,9 +51,9 @@
 }
 .details_portfolio a {
   font-size: 16px;
+  font-weight: 400;
   text-decoration: none;
   color: var(--link-tag);
-  font-weight: 300;
   padding: 0px 5px;
 }
 .details_otherData {
