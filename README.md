@@ -39,3 +39,6 @@ A Social media app for anime lovers.
 - Profile Page.
 - Login Page.
 - SignUp Page.
+
+## Demo Link
+https://neog-socialmedia.netlify.app/
