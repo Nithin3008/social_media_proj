@@ -1,7 +1,13 @@
 .RoutSectPages_mini {
-  background-color: var(--background-clr-comm);
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  width: fit-content;
+  gap: 40px;
   padding: 10px 10px;
+  margin: auto;
+}
+@media screen and (max-width: 500px) {
+  .RoutSectPages_mini {
+    width: fit-content;
+    gap: 20px;
+  }
 }
