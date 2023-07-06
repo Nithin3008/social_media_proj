@@ -132,3 +132,8 @@ button {
   border-radius: 5px;
   padding: 5px 10px;
 }
+@media (max-width: 600px) {
+  .ProfileSec_about {
+    width: 350px;
+  }
+}

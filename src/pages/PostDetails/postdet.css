@@ -73,4 +73,13 @@
   .PostDetails__postsSection__posts {
     width: 350px;
   }
+  .PostDetails__postsSection__posts img {
+    width: 250px;
+    height: 150px;
+  }
+  .PostDetails__postsSection__posts-fName img {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+  }
 }
