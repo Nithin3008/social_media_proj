@@ -2,8 +2,12 @@ import React from "react";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Services/HelperFunc/AuthFunc";
+import { useNavigate } from "react-router";
 import "./routemini.css";
+import { MainContext } from "../../Services/Context/MainReducer";
 export const RouteMini = () => {
+  const { Users, loggedInUser } = useContext(MainContext);
+  const nav = useNavigate();
   const { logoutFun } = useContext(AuthContext);
   const setActiveStyle = ({ isActive }) => ({
     backgroundColor: isActive ? "#000000" : "",
@@ -73,26 +77,7 @@ export const RouteMini = () => {
         </NavLink>
         <NavLink
           className="RouteSec_pages-navLinks"
-          to={"/Bookmark1"}
-          style={setActiveStyle}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="50"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="red"
-            stroke-width="2"
-            stroke-linecap="square"
-            stroke-linejoin="round"
-          >
-            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" />
-          </svg>
-        </NavLink>
-        <NavLink
-          className="RouteSec_pages-navLinks"
-          to={"/Bookmark1"}
+          to={`/Profile1/${loggedInUser.username}`}
           style={setActiveStyle}
         >
           <svg
@@ -110,6 +95,24 @@ export const RouteMini = () => {
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
         </NavLink>
+        <button
+          style={{ backgroundColor: "#16181c" }}
+          onClick={() => logoutFun()}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="50"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="red"
+            stroke-width="2"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          >
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" />
+          </svg>
+        </button>
       </div>
     </div>
   );
