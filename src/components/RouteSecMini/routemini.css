@@ -1,0 +1,7 @@
+.RoutSectPages_mini {
+  background-color: var(--background-clr-comm);
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 10px 10px;
+}
