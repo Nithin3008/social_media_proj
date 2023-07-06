@@ -82,6 +82,7 @@
   }
   .routeSec__Mini {
     display: inline-block;
+    width: 100%;
     position: fixed;
     bottom: 0;
     background-color: var(--background-clr-comm);

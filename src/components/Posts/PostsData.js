@@ -103,7 +103,6 @@ export const PostsTotalData = ({ posts }) => {
               style={{
                 display:
                   val.username === loggedInUser.username ? "block" : "none",
-                marginLeft: "150px",
               }}
               className="dotsForFunc"
             >
