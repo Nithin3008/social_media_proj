@@ -64,3 +64,8 @@
   text-decoration: none;
   color: #ff6d00;
 }
+@media (max-width: 1080px) {
+  .login__image {
+    display: none;
+  }
+}

@@ -57,3 +57,8 @@ h2 {
   cursor: pointer;
   background-color: white;
 }
+@media (max-width: 1080px) {
+  .signup__image {
+    display: none;
+  }
+}
