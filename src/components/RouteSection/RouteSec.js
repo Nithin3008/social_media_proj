@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import "./Routesec.css";
 import { NavLink } from "react-router-dom";
-import { PostsContext } from "../../Services/HelperFunc/PostFunc";
 import { AuthContext } from "../../Services/HelperFunc/AuthFunc";
 import AOS from "aos";
 import "aos/dist/aos.css";
