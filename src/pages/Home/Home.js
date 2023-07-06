@@ -7,6 +7,7 @@ import { RouteSec } from "../../components/RouteSection/RouteSec";
 import { toast } from "react-toastify";
 import { PostsTotalData } from "../../components/Posts/PostsData";
 import "react-toastify/dist/ReactToastify.css";
+import { RouteMini } from "../../components/RouteSecMini/RouteMini";
 
 export function Home1() {
   const { Posts, loggedInUser, loggedInUserFollwers } = useContext(MainContext);
@@ -70,6 +71,9 @@ export function Home1() {
         <section className="rightPane">
           <Suggested></Suggested>
         </section>
+      </section>
+      <section className="routeSec__Mini">
+        <RouteMini></RouteMini>
       </section>
     </div>
   );

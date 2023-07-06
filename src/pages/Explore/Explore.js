@@ -2,6 +2,7 @@ import { MainContext } from "../../Services/Context/MainReducer";
 import { useContext } from "react";
 import { RouteSec } from "../../components/RouteSection/RouteSec";
 import { Suggested } from "../../components/suggestion/SuggestionSec";
+import { RouteMini } from "../../components/RouteSecMini/RouteMini";
 import "./explore.css";
 import { PostsTotalData } from "../../components/Posts/PostsData";
 export function Explore1() {
@@ -18,6 +19,9 @@ export function Explore1() {
         </div>
         <section className="rightPane">
           <Suggested></Suggested>
+        </section>
+        <section className="routeSec__Mini">
+          <RouteMini></RouteMini>
         </section>
       </section>
     </div>

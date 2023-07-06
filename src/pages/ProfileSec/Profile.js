@@ -9,6 +9,7 @@ import { FollowContext } from "../../Services/HelperFunc/FollowFunc";
 import { UsersContext } from "../../Services/HelperFunc/UsersFunc";
 import { useNavigate } from "react-router";
 import { useState } from "react";
+import { RouteMini } from "../../components/RouteSecMini/RouteMini";
 import { PostsTotalData } from "../../components/Posts/PostsData";
 
 export function Profile1() {
@@ -149,6 +150,9 @@ export function Profile1() {
         </div>
         <section className="rightPane">
           <Suggested></Suggested>
+        </section>
+        <section className="routeSec__Mini">
+          <RouteMini></RouteMini>
         </section>
       </section>
     </>
