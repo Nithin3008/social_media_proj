@@ -69,3 +69,8 @@
 .PostDetails__postsSection__posts-button svg {
   margin: 0px 13px;
 }
+@media (max-width: 600px) {
+  .PostDetails__postsSection__posts {
+    width: 350px;
+  }
+}

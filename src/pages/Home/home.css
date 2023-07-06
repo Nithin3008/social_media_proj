@@ -84,11 +84,11 @@
     display: inline-block;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    background-color: var(--background-clr-comm);
   }
 }
 @media (max-width: 600px) {
   .home_postsSection-newPost {
-    width: 400px;
+    width: 350px;
   }
 }
