@@ -46,6 +46,8 @@ export function AuthProvider({ children }) {
           lastName: userDetails?.lName,
           username: userDetails?.userName,
           password: userDetails?.pwd,
+          avatar:
+            "https://github.com/Nithin3008/social_media_proj/blob/master/public/images/dp2.jpeg?raw=true",
         });
         localStorage.setItem("token", response.data.encodedToken);
         if (response.status === 201) {
