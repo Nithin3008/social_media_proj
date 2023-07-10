@@ -30,6 +30,7 @@ A Social media app for anime lovers.
 - User can edit their details in profile section.
 - Added animations.
 - Image Emojis can be added to the Post.
+- Responsive
 
 ## Pages
 
