@@ -124,7 +124,16 @@ export const PostsTotalData = ({ posts }) => {
                 <circle cx="19" cy="12" r="1"></circle>
                 <circle cx="5" cy="12" r="1"></circle>
               </svg>
-              <li style={{ display: val._id === showEdit ? "block" : "none" }}>
+              <li
+                style={{
+                  display: val._id === showEdit ? "block" : "none",
+                  position: "absolute",
+                  left: "53.5%",
+                  backgroundColor: "var(--background-color-common)",
+                  padding: "5px",
+                  borderRadius: "5px",
+                }}
+              >
                 <button
                   onClick={(e) => {
                     setShow(!show);

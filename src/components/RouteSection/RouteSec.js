@@ -18,7 +18,7 @@ export function RouteSec() {
   });
   return (
     <div className="RouteSec_pages" data-aos={"fade-right"}>
-      <h1>AnimeVerse</h1>
+      <h1 style={{ cursor: "pointer" }}>AnimeVerse</h1>
       <NavLink
         style={setActiveStyle}
         className="RouteSec_pages-navLinks"
