@@ -28,10 +28,9 @@ export const PostsTotalData = ({ posts }) => {
   const [show, setShow] = useState(false);
   const [editObject, setObject] = useState({});
   const [editDetails, setDetails] = useState();
-  const [editImage, setImage] = useState("");
   const [showEdit, setShowEdit] = useState("");
   function sendEditPost() {
-    const x = { ...editObject, img: editImage, content: editDetails };
+    const x = { ...editObject };
     editPost(x);
     setShow(!show);
   }
@@ -46,16 +45,27 @@ export const PostsTotalData = ({ posts }) => {
           <h1>Edit Post</h1>
           <textarea
             type="text"
-            onChange={(e) => setDetails(e.target.value)}
-            value={editDetails}
+            onChange={(event) =>
+              setObject((editObject) => ({
+                ...editObject,
+                content: event.target.value,
+              }))
+            }
+            defaultValue={editObject.content}
           ></textarea>
           <div
-            style={{ display: editImage === "" ? "none" : "block" }}
+            style={{ display: editObject.img === "" ? "none" : "block" }}
             className="editSectionPost-details__img"
           >
-            <img src={editImage}></img>
+            <img src={editObject.img}></img>
             <br></br>
-            <button onClick={() => setImage(null)}>Remove Image</button>
+            <button
+              onClick={() =>
+                setObject((editObject) => ({ ...editObject, img: null }))
+              }
+            >
+              Remove Image
+            </button>
           </div>
 
           <label>
@@ -67,7 +77,12 @@ export const PostsTotalData = ({ posts }) => {
             <input
               className="editSection__details-input"
               type="file"
-              onChange={(e) => setImage(e.target.files[0])}
+              onChange={(event) =>
+                setObject((editObject) => ({
+                  ...editObject,
+                  img: event.target.files[0],
+                }))
+              }
             ></input>
           </label>
           <div>
@@ -138,8 +153,6 @@ export const PostsTotalData = ({ posts }) => {
                   onClick={(e) => {
                     setShow(!show);
                     setObject(val);
-                    setDetails(val.content);
-                    setImage(val.img);
                   }}
                 >
                   Edit
